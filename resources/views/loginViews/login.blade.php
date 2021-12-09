@@ -21,7 +21,6 @@
   <!-- endinject -->
   <link rel="shortcut icon" href="{{ asset('')}}assets/admin/images/favicon.png" />
 </head>
-
 <body>
   <div class="container-scroller">
     <div class="container-fluid page-body-wrapper full-page-wrapper">
@@ -30,39 +29,31 @@
           <div class="col-lg-4 mx-auto">
             <div class="auth-form-light text-left py-5 px-4 px-sm-5">
               <center>
+                <img src="{{ asset('assets/admin/images/kominfo.png') }}" alt="" width="250" height="250" class="mb-3">
                 <h4>Selamat Datang Di Website Kominfo Kabupaten Bone</h4>
                 <h6 class="fw-light">Silahkan Login Untuk Masuk</h6>
+                @if (session('status'))
+                <div class="alert alert-danger alert-dismissible fade show mt-3" role="alert">
+                  <center>
+                    <strong>{{ session('status') }} </strong>
+                  </center>
+                  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+                @endif
               </center>
-              <form class="pt-3" method="GET" action="{{ url('/') }}">
+              <form class="pt-3" action="{{ route("postlogin") }}" method="POST">
                 @csrf
                 <div class="form-group">
-                  <input type="email" class="form-control form-control-lg" id="exampleInputEmail1" placeholder="Username">
+                  <input type="email" name="email" class="form-control form-control-lg" id="exampleInputEmail1" placeholder="Email">
                 </div>
                 <div class="form-group">
-                  <input type="password" class="form-control form-control-lg" id="exampleInputPassword1" placeholder="Password">
+                  <input type="password" name="password" class="form-control form-control-lg" id="password" placeholder="Password">
                 </div>
                 <center>
                   <div class="mt-3">
                     <button type="submit" class="btn btn-block btn-primary btn-lg font-weight-medium auth-form-btn">Masuk</button>
                   </div>
                 </center>
-                {{-- <div class="my-2 d-flex justify-content-between align-items-center">
-                  <div class="form-check">
-                    <label class="form-check-label text-muted">
-                      <input type="checkbox" class="form-check-input">
-                      Keep me signed in
-                    </label>
-                  </div>
-                  <a href="#" class="auth-link text-black">Forgot password?</a>
-                </div>
-                <div class="mb-2">
-                  <button type="button" class="btn btn-block btn-facebook auth-form-btn">
-                    <i class="ti-facebook me-2"></i>Connect using facebook
-                  </button>
-                </div> --}}
-                <div class="text-center mt-4 fw-light">
-                  Don't have an account? <a href="register.html" class="text-primary">Create</a>
-                </div>
               </form>
             </div>
           </div>

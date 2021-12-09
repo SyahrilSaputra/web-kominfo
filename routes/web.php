@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\LoginController;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,10 +14,16 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('adminViews.index');
-});
 
-Route::get('/login', function () {
-    return view('loginViews.login');
+
+Route::get('/login', function () { return view('loginViews.login'); })->name('login');
+Route::get('/logout', [LoginController::class, 'logout'])->name('logout');
+Route::post('/postlogin', [LoginController::class, 'postlogin'])->name('postlogin');
+// Route::group(['middleware' => ['auth', 'cekrole:admin,superadmin']], function () {
+
+// }
+Route::group(['middleware' => ['auth']], function () {
+    Route::get('/dashboard', function () {
+        return view('adminViews.index');
+    });
 });
