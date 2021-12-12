@@ -22,8 +22,11 @@ Route::post('/postlogin', [LoginController::class, 'postlogin'])->name('postlogi
 // Route::group(['middleware' => ['auth', 'cekrole:admin,superadmin']], function () {
 
 // }
-Route::group(['middleware' => ['auth']], function () {
+
+Route::group(['middleware' => ['auth', 'cekrole:admin,superadmin']], function () {
     Route::get('/dashboard', function () {
         return view('adminViews.index');
     });
+});
+Route::group(['middleware' => ['auth', 'cekrole:superadmin']], function () {
 });

@@ -1,6 +1,7 @@
 @extends('adminTemplates.temp')
+@section('title', 'Dashboard Admin')
 @section('dashboardContent')
-      <div class="main-panel">
+      {{-- <div class="main-panel">
         <div class="content-wrapper">
           <div class="row">
             <div class="col-sm-12">
@@ -734,5 +735,5 @@
           </div>
         </footer>
         <!-- partial -->
-      </div>
+      </div> --}}
 @endSection 
