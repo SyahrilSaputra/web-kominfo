@@ -43,7 +43,8 @@ class ContactController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'type' => 'required',
+            'type' => 'required|unique:contacts',
+            'type.unique' => "Nama telah terdaftar",
             'content' => 'required',
         ],[
             'type.required' => "Nama tidak boleh kosong",

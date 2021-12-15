@@ -11,7 +11,7 @@
                 <a href="{{ route('contact.create') }}" class="btn btn-primary">Tambah Kontak</a>
             </div>
             @if (session()->has('success'))
-            <div class="alert alert-warning alert-dismissible fade show" role="alert">
+            <div class="alert alert-success alert-dismissible fade show" role="alert">
                 <strong>{{ session('success') }}</strong>
                 <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
             </div>
@@ -40,9 +40,9 @@
                         <td>{{ $c->type }}</td>
                         <td>{!! $c->content !!}</td>
                         <td class="text-center" nowrap="nowrap">
-                            <a href="{{ route('contact.edit',['contact' => $c->slug]) }}" class="badge badge-primary">Edit</a>
+                            <a href="{{ route('contact.edit',['contact' => $c->slug]) }}" class="badge badge-warning text-decoration-none">Edit</a>
                             
-                            <a href="{{ route('contact.delete', ['contact' => $c->slug]) }}" onclick="return confirm('Apakah anda yakin ?')" class="badge badge-danger">hapus</a>
+                            <a href="{{ route('contact.delete', ['contact' => $c->slug]) }}" onclick="return confirm('Apakah anda yakin ?')" class="badge badge-danger text-decoration-none">hapus</a>
                         </td>
                     </tr>
                     @endforeach

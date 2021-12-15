@@ -12,14 +12,14 @@
                 @method('patch')
                 <div class="form-group">
                     <label for="exampleInputName1" class=" @error('type') text-danger @enderror">Nama</label>
-                    <input type="text" class="form-control @error('type') is-invalid @enderror" id="exampleInputName1" name="type" value="{{ $contact->type }}">
+                    <input type="text" class="form-control @error('type') is-invalid @enderror" id="exampleInputName1" name="type" value="{{ old('type') ? old('type') : $contact->type }}">
                     @error('type')
                         <p class="text-danger">{{ $message }}</p>
                     @enderror
                 </div>
                 <div class="form-group">
                     <label class=" @error('content') text-danger @enderror">Isi</label>
-                    <textarea class="form-control  @error('content') is-invalid @enderror"style="height: 100px" name="content">{!! $contact->content !!}</textarea>
+                    <textarea class="form-control  @error('content') is-invalid @enderror"style="height: 100px" name="content">{!! old('content') ? old('content') : $contact->content !!}</textarea>
                     @error('content')
                         <p class="text-danger">{{ $message }}</p>
                     @enderror
