@@ -19,7 +19,7 @@
         </a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="index.html">
+        <a class="nav-link" href="{{ route('contact') }}">
           <i class="mdi mdi-account-box" style="font-size: 30px; margin-right:10px;"></i>
           <span class="menu-title">Kontak</span>
         </a>

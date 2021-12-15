@@ -1,7 +1,11 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\LoginController;
+use App\Http\Controllers\{
+    LoginController,
+    ContactController,
+    DashboardController,
+};
 
 /*
 |--------------------------------------------------------------------------
@@ -24,8 +28,14 @@ Route::post('/postlogin', [LoginController::class, 'postlogin'])->name('postlogi
 // }
 
 Route::group(['middleware' => ['auth', 'cekrole:admin,superadmin']], function () {
-    Route::get('/dashboard', function () {
-        return view('adminViews.index');
+    Route::group(['prefix' => 'dashboard'], function () {
+        Route::get('/', [DashboardController::class, 'index']);
+        Route::get('/contact', [ContactController::class, 'index'])->name('contact');
+        Route::get('/create-contact', [ContactController::class, 'create'])->name('contact.create');
+        Route::post('/store-contact', [ContactController::class, 'store'])->name('contact.store');
+        Route::get('/edit-contact/{contact:slug}', [ContactController::class, 'edit'])->name('contact.edit');
+        Route::patch('/update-contact/{contact:slug}', [ContactController::class, 'update'])->name('contact.update');
+        Route::get('/delete-contact/{contact:slug}', [ContactController::class, 'destroy'])->name('contact.delete');
     });
 });
 Route::group(['middleware' => ['auth', 'cekrole:superadmin']], function () {
