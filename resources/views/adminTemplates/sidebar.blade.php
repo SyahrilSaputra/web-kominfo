@@ -48,7 +48,7 @@
               <a href="{{ route('visiMisi') }}">Visi dan Misi</a>
             </li>
             <li>
-              <a href="blank-page.html">Tentang Kami</a>
+              <a href="{{ route('tentangKami') }}">Tentang Kami</a>
             </li>
             <li>
               <a href="blank-page.html">Pimpinan</a>

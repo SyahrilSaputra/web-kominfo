@@ -5,7 +5,8 @@ use App\Http\Controllers\{
     LoginController,
     ContactController,
     DashboardController,
-    VisimisiController
+    VisimisiController,
+    TentangkamiController
 };
 
 /*
@@ -46,7 +47,9 @@ Route::group(['middleware' => ['auth', 'cekrole:admin,superadmin']], function ()
                 Route::patch('/update-visimisi/{visimisi:uuid}', [VisimisiController::class, 'update'])->name('visiMisi.update');
             });
             Route::group(['prefix' => 'tentang-kami'], function(){
-                Route::get('/', [ProfileController::class, 'tentang-kami'])->name('tentangKami');
+                Route::get('/', [TentangkamiController::class, 'index'])->name('tentangKami');
+                Route::get('/edit-tentang-kami/{tentangkami:uuid}', [TentangkamiController::class, 'edit'])->name('tentangKami.edit');
+                Route::patch('/update-tentangkami/{tentangkami:uuid}', [TentangkamiController::class, 'update'])->name('tentangKami.update');
             });
             Route::group(['prefix' => 'pimpinan'], function(){
                 Route::get('/', [ProfileController::class, 'pimpinan'])->name('pimpinan');
