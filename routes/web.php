@@ -29,13 +29,20 @@ Route::post('/postlogin', [LoginController::class, 'postlogin'])->name('postlogi
 
 Route::group(['middleware' => ['auth', 'cekrole:admin,superadmin']], function () {
     Route::group(['prefix' => 'dashboard'], function () {
-        Route::get('/', [DashboardController::class, 'index']);
-        Route::get('/contact', [ContactController::class, 'index'])->name('contact');
-        Route::get('/create-contact', [ContactController::class, 'create'])->name('contact.create');
-        Route::post('/store-contact', [ContactController::class, 'store'])->name('contact.store');
-        Route::get('/edit-contact/{contact:slug}', [ContactController::class, 'edit'])->name('contact.edit');
-        Route::patch('/update-contact/{contact:slug}', [ContactController::class, 'update'])->name('contact.update');
-        Route::get('/delete-contact/{contact:slug}', [ContactController::class, 'destroy'])->name('contact.delete');
+        Route::get('/', [DashboardController::class, 'index'])->name('dashboard');
+        Route::group(['prefix' => 'contact'], function(){
+            Route::get('/', [ContactController::class, 'index'])->name('contact');
+            Route::get('/create-contact', [ContactController::class, 'create'])->name('contact.create');
+            Route::post('/store-contact', [ContactController::class, 'store'])->name('contact.store');
+            Route::get('/edit-contact/{contact:slug}', [ContactController::class, 'edit'])->name('contact.edit');
+            Route::patch('/update-contact/{contact:slug}', [ContactController::class, 'update'])->name('contact.update');
+            Route::get('/delete-contact/{contact:slug}', [ContactController::class, 'destroy'])->name('contact.delete');
+        });
+        Route::group(['prefix' => 'profile'], function(){
+            Route::group(['prefix' => 'visi-misi'], function(){
+                Route::get('/', [ProfileController::class, 'visi-misi'])->name('visiMisi');
+            });
+        });
     });
 });
 Route::group(['middleware' => ['auth', 'cekrole:superadmin']], function () {

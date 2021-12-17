@@ -4,7 +4,6 @@
 @section('css')
     
 @endsection
-    <div class="mx-5" style="width: 100%;">
         <div class="mt-5">
             <h4 class="card-title">Edit Data</h4>            
             <form action="{{ route('contact.update', ['contact' => $contact->slug]) }}" class="forms-sample mt-5" method="POST">
@@ -24,11 +23,11 @@
                         <p class="text-danger">{{ $message }}</p>
                     @enderror
                 </div>
+                <br>
                 <button type="submit" class="btn btn-primary me-2">Submit</button>
                 <a href="{{ route('contact') }}" class="btn btn-warning">Cancel</a>
               </form>
         </div>
-    </div>
     @push('scripts')
         
     @endpush

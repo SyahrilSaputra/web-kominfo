@@ -1,129 +1,763 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="shortcut icon"
+      href="{{ asset('') }}assets/admins/images/favicon.svg"
+      type="image/x-icon"
+    />
+    <title>PlainAdmin Demo | Bootstrap 5 Admin Template</title>
 
-<head>
-  <!-- Required meta tags -->
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <title>@yield('title')</title>
-  <!-- plugins:css -->
-  <link rel="stylesheet" href="{{ asset('')}}assets/admin/vendors/feather/feather.css">
-  <link rel="stylesheet" href="{{ asset('')}}assets/admin/vendors/mdi/css/materialdesignicons.min.css">
-  <link rel="stylesheet" href="{{ asset('')}}assets/admin/vendors/ti-icons/css/themify-icons.css">
-  <link rel="stylesheet" href="{{ asset('')}}assets/admin/vendors/typicons/typicons.css">
-  <link rel="stylesheet" href="{{ asset('')}}assets/admin/vendors/simple-line-icons/css/simple-line-icons.css">
-  <link rel="stylesheet" href="{{ asset('')}}assets/admin/vendors/css/vendor.bundle.base.css">
-  <!-- endinject -->
-  <!-- Plugin css for this page -->
-  <link rel="stylesheet" href="{{ asset('')}}assets/admin/vendors/datatables.net-bs4/dataTables.bootstrap4.css">
-  <link rel="stylesheet" href="{{ asset('')}}assets/admin/js/select.dataTables.min.css">
-  <!-- End plugin css for this page -->
-  <!-- inject:css -->
-  <link rel="stylesheet" href="{{ asset('')}}assets/admin/css/vertical-layout-light/style.css">
-  <!-- endinject -->
-  <link rel="shortcut icon" href="{{ asset('')}}assets/admin/images/favicon.png" />
-  @yield('css')
-</head>
-<body>
-  <div class="container-scroller"> 
-    <!-- partial:partials/_navbar.html -->
-    <nav class="navbar default-layout col-lg-12 col-12 p-0 fixed-top d-flex align-items-top flex-row">
-      <div class="text-center navbar-brand-wrapper d-flex align-items-center justify-content-start">
-        <div class="me-3">
-          <button class="navbar-toggler navbar-toggler align-self-center" type="button" data-bs-toggle="minimize">
-            <span class="icon-menu"></span>
-          </button>
-        </div>
-        <div>
-          <a class="navbar-brand brand-logo" href="index.html">
-            <img src="images/logo.svg" alt="logo" />
-          </a>
-          <a class="navbar-brand brand-logo-mini" href="index.html">
-            <img src="images/logo-mini.svg" alt="logo" />
-          </a>
-        </div>
-      </div>
-      <div class="navbar-menu-wrapper d-flex align-items-top"> 
-        <ul class="navbar-nav">
-          <li class="nav-item font-weight-semibold d-none d-lg-block ms-0">
-            <h1 class="welcome-text">Good Morning, <span class="text-black fw-bold">{{ auth()->user()->name }}</span></h1>
-          </li>
-        </ul>
-        <ul class="navbar-nav ms-auto">
-          <li class="nav-item d-none d-lg-block">
-            <div id="datepicker-popup" class="input-group date datepicker navbar-date-picker">
-              <span class="input-group-addon input-group-prepend border-right">
-                <span class="icon-calendar input-group-text calendar-icon"></span>
-              </span>
-              <input type="text" class="form-control">
+    <!-- ========== All CSS files linkup ========= -->
+    <link rel="stylesheet" href="{{ asset('') }}assets/admins/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="{{ asset('') }}assets/admins/css/lineicons.css" />
+    <link rel="stylesheet" href="{{ asset('') }}assets/admins/css/materialdesignicons.min.css" />
+    <link rel="stylesheet" href="{{ asset('') }}assets/admins/css/fullcalendar.css" />
+    <link rel="stylesheet" href="{{ asset('') }}assets/admins/css/fullcalendar.css" />
+    <link rel="stylesheet" href="{{ asset('') }}assets/admins/css/main.css" />
+    @yield('css')
+  </head>
+  <body>
+    <!-- ======== sidebar-nav start =========== -->
+    @include('adminTemplates.sidebar')
+    <div class="overlay"></div>
+    <!-- ======== sidebar-nav end =========== -->
+
+    <!-- ======== main-wrapper start =========== -->
+    <main class="main-wrapper">
+      <!-- ========== header start ========== -->
+      <header class="header">
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col-lg-5 col-md-5 col-6">
+              <div class="header-left d-flex align-items-center">
+                <div class="menu-toggle-btn mr-20">
+                  <button
+                    id="menu-toggle"
+                    class="main-btn primary-btn btn-hover"
+                  >
+                    <i class="lni lni-chevron-left me-2"></i> Menu
+                  </button>
+                </div>
+                <div class="header-search d-none d-md-flex">
+                  <form action="#">
+                    <input type="text" placeholder="Search..." />
+                    <button><i class="lni lni-search-alt"></i></button>
+                  </form>
+                </div>
+              </div>
             </div>
-          </li>
-        </ul>
-        <button class="navbar-toggler navbar-toggler-right d-lg-none align-self-center" type="button" data-bs-toggle="offcanvas">
-          <span class="mdi mdi-menu"></span>
-        </button>
-      </div>
-    </nav>
-    <!-- partial -->
-    <div class="container-fluid page-body-wrapper">
-      <!-- partial:partials/_settings-panel.html -->
-      <div class="theme-setting-wrapper">
-        <div id="settings-trigger"><i class="ti-settings"></i></div>
-        <div id="theme-settings" class="settings-panel">
-          <i class="settings-close ti-close"></i>
-          <p class="settings-heading">SIDEBAR SKINS</p>
-          <div class="sidebar-bg-options selected" id="sidebar-light-theme"><div class="img-ss rounded-circle bg-light border me-3"></div>Light</div>
-          <div class="sidebar-bg-options" id="sidebar-dark-theme"><div class="img-ss rounded-circle bg-dark border me-3"></div>Dark</div>
-          <p class="settings-heading mt-2">HEADER SKINS</p>
-          <div class="color-tiles mx-0 px-4">
-            <div class="tiles success"></div>
-            <div class="tiles warning"></div>
-            <div class="tiles danger"></div>
-            <div class="tiles info"></div>
-            <div class="tiles dark"></div>
-            <div class="tiles default"></div>
+            <div class="col-lg-7 col-md-7 col-6">
+              <div class="header-right">
+                <!-- notification start -->
+                <div class="notification-box ml-15 d-none d-md-flex">
+                  <button
+                    class="dropdown-toggle"
+                    type="button"
+                    id="notification"
+                    data-bs-toggle="dropdown"
+                    aria-expanded="false"
+                  >
+                    <i class="lni lni-alarm"></i>
+                    <span>2</span>
+                  </button>
+                  <ul
+                    class="dropdown-menu dropdown-menu-end"
+                    aria-labelledby="notification"
+                  >
+                    <li>
+                      <a href="#0">
+                        <div class="image">
+                          <img src="assets/images/lead/lead-6.png" alt="" />
+                        </div>
+                        <div class="content">
+                          <h6>
+                            John Doe
+                            <span class="text-regular">
+                              comment on a product.
+                            </span>
+                          </h6>
+                          <p>
+                            Lorem ipsum dolor sit amet, consect etur adipiscing
+                            elit Vivamus tortor.
+                          </p>
+                          <span>10 mins ago</span>
+                        </div>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="#0">
+                        <div class="image">
+                          <img src="assets/images/lead/lead-1.png" alt="" />
+                        </div>
+                        <div class="content">
+                          <h6>
+                            Jonathon
+                            <span class="text-regular">
+                              like on a product.
+                            </span>
+                          </h6>
+                          <p>
+                            Lorem ipsum dolor sit amet, consect etur adipiscing
+                            elit Vivamus tortor.
+                          </p>
+                          <span>10 mins ago</span>
+                        </div>
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+                <!-- notification end -->
+                <!-- message start -->
+                <div class="header-message-box ml-15 d-none d-md-flex">
+                  <button
+                    class="dropdown-toggle"
+                    type="button"
+                    id="message"
+                    data-bs-toggle="dropdown"
+                    aria-expanded="false"
+                  >
+                    <i class="lni lni-envelope"></i>
+                    <span>3</span>
+                  </button>
+                  <ul
+                    class="dropdown-menu dropdown-menu-end"
+                    aria-labelledby="message"
+                  >
+                    <li>
+                      <a href="#0">
+                        <div class="image">
+                          <img src="assets/images/lead/lead-5.png" alt="" />
+                        </div>
+                        <div class="content">
+                          <h6>Jacob Jones</h6>
+                          <p>Hey!I can across your profile and ...</p>
+                          <span>10 mins ago</span>
+                        </div>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="#0">
+                        <div class="image">
+                          <img src="assets/images/lead/lead-3.png" alt="" />
+                        </div>
+                        <div class="content">
+                          <h6>John Doe</h6>
+                          <p>Would you mind please checking out</p>
+                          <span>12 mins ago</span>
+                        </div>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="#0">
+                        <div class="image">
+                          <img src="assets/images/lead/lead-2.png" alt="" />
+                        </div>
+                        <div class="content">
+                          <h6>Anee Lee</h6>
+                          <p>Hey! are you available for freelance?</p>
+                          <span>1h ago</span>
+                        </div>
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+                <!-- message end -->
+                <!-- filter start -->
+                <div class="filter-box ml-15 d-none d-md-flex">
+                  <button class="" type="button" id="filter">
+                    <i class="lni lni-funnel"></i>
+                  </button>
+                </div>
+                <!-- filter end -->
+                <!-- profile start -->
+                <div class="profile-box ml-15">
+                  <button
+                    class="dropdown-toggle bg-transparent border-0"
+                    type="button"
+                    id="profile"
+                    data-bs-toggle="dropdown"
+                    aria-expanded="false"
+                  >
+                    <div class="profile-info">
+                      <div class="info">
+                        <h6>John Doe</h6>
+                        <div class="image">
+                          <img
+                            src="assets/images/profile/profile-image.png"
+                            alt=""
+                          />
+                          <span class="status"></span>
+                        </div>
+                      </div>
+                    </div>
+                    <i class="lni lni-chevron-down"></i>
+                  </button>
+                  <ul
+                    class="dropdown-menu dropdown-menu-end"
+                    aria-labelledby="profile"
+                  >
+                    <li>
+                      <a href="#0">
+                        <i class="lni lni-user"></i> View Profile
+                      </a>
+                    </li>
+                    <li>
+                      <a href="#0">
+                        <i class="lni lni-alarm"></i> Notifications
+                      </a>
+                    </li>
+                    <li>
+                      <a href="#0"> <i class="lni lni-inbox"></i> Messages </a>
+                    </li>
+                    <li>
+                      <a href="#0"> <i class="lni lni-cog"></i> Settings </a>
+                    </li>
+                    <li>
+                      <a href="#0"> <i class="lni lni-exit"></i> Sign Out </a>
+                    </li>
+                  </ul>
+                </div>
+                <!-- profile end -->
+              </div>
+            </div>
           </div>
         </div>
-      </div>
-      
-      <!-- partial -->
-      <!-- partial:partials/_sidebar.html -->
-      @include('adminTemplates.sidebar')
-      <!-- partial -->
-      @yield('dashboardContent')
-      <!-- main-panel ends -->
-    </div>
-    <!-- page-body-wrapper ends -->
-  </div>
-  <!-- container-scroller -->
+      </header>
+      <!-- ========== header end ========== -->
 
-  <!-- plugins:js -->
-  <script src="{{ asset('')}}assets/admin/vendors/js/vendor.bundle.base.js"></script>
-  <!-- endinject -->
-  <!-- Plugin js for this page -->
-  <script src="{{ asset('')}}assets/admin/vendors/chart.js/Chart.min.js"></script>
-  <script src="{{ asset('')}}assets/admin/vendors/bootstrap-datepicker/bootstrap-datepicker.min.js"></script>
-  <script src="{{ asset('')}}assets/admin/vendors/progressbar.js/progressbar.min.js"></script>
+      <!-- ========== section start ========== -->
+      <section class="section">
+        <div class="bg-light py-5 mt-3">
+          <div class="mx-5" style="">
+            @yield('dashboardContent')
+          </div>
+        </div>
+        <!-- end container -->
+      </section>
+      <!-- ========== section end ========== -->
 
-  <!-- End plugin js for this page -->
-  <!-- inject:js -->
-  <script src="{{ asset('')}}assets/admin/js/off-canvas.js"></script>
-  <script src="{{ asset('')}}assets/admin/js/hoverable-collapse.js"></script>
-  <script src="{{ asset('')}}assets/admin/js/template.js"></script>
-  <script src="{{ asset('')}}assets/admin/js/settings.js"></script>
-  <script src="{{ asset('')}}assets/admin/s/todolist.js"></script>
-  <!-- endinject -->
-  <!-- Custom js for this page-->
-  <script src="{{ asset('')}}assets/admin/js/dashboard.js"></script>
-  <script src="{{ asset('')}}assets/admin/js/Chart.roundedBarCharts.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous"></script>
-  <script
-			  src="https://code.jquery.com/jquery-3.6.0.js"
-			  integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
-			  crossorigin="anonymous"></script>
-  @stack('scripts')
-  <!-- End custom js for this page-->
-</body>
+      <!-- ========== footer start =========== -->
+     @include('adminTemplates.footer')
+      <!-- ========== footer end =========== -->
+    </main>
+    <!-- ======== main-wrapper end =========== -->
 
+    <!-- ========= All Javascript files linkup ======== -->
+    <script src="{{ asset('') }}assets/admins/js/jquery.js"></script>
+    <script src="{{ asset('') }}assets/admins/js/bootstrap.bundle.min.js"></script>
+    <script src="{{ asset('') }}assets/admins/js/Chart.min.js"></script>
+    <script src="{{ asset('') }}assets/admins/js/dynamic-pie-chart.js"></script>
+    <script src="{{ asset('') }}assets/admins/js/moment.min.js"></script>
+    <script src="{{ asset('') }}assets/admins/js/fullcalendar.js"></script>
+    <script src="{{ asset('') }}assets/admins/js/jvectormap.min.js"></script>
+    <script src="{{ asset('') }}assets/admins/js/world-merc.js"></script>
+    <script src="{{ asset('') }}assets/admins/js/polyfill.js"></script>
+    <script src="{{ asset('') }}assets/admins/js/main.js"></script>
+    @stack('scripts')
+    <script>
+      // ======== jvectormap activation
+      var markers = [
+        { name: "Egypt", coords: [26.8206, 30.8025] },
+        { name: "Russia", coords: [61.524, 105.3188] },
+        { name: "Canada", coords: [56.1304, -106.3468] },
+        { name: "Greenland", coords: [71.7069, -42.6043] },
+        { name: "Brazil", coords: [-14.235, -51.9253] },
+      ];
+
+      var jvm = new jsVectorMap({
+        map: "world_merc",
+        selector: "#map",
+        zoomButtons: true,
+
+        regionStyle: {
+          initial: {
+            fill: "#d1d5db",
+          },
+        },
+
+        labels: {
+          markers: {
+            render: (marker) => marker.name,
+          },
+        },
+
+        markersSelectable: true,
+        selectedMarkers: markers.map((marker, index) => {
+          var name = marker.name;
+
+          if (name === "Russia" || name === "Brazil") {
+            return index;
+          }
+        }),
+        markers: markers,
+        markerStyle: {
+          initial: { fill: "#4A6CF7" },
+          selected: { fill: "#ff5050" },
+        },
+        markerLabelStyle: {
+          initial: {
+            fontWeight: 400,
+            fontSize: 14,
+          },
+        },
+      });
+      // ====== calendar activation
+      document.addEventListener("DOMContentLoaded", function () {
+        var calendarMiniEl = document.getElementById("calendar-mini");
+        var calendarMini = new FullCalendar.Calendar(calendarMiniEl, {
+          initialView: "dayGridMonth",
+          headerToolbar: {
+            end: "today prev,next",
+          },
+        });
+        calendarMini.render();
+      });
+
+      // =========== chart one start
+      const ctx1 = document.getElementById("Chart1").getContext("2d");
+      const chart1 = new Chart(ctx1, {
+        // The type of chart we want to create
+        type: "line", // also try bar or other graph types
+
+        // The data for our dataset
+        data: {
+          labels: [
+            "Jan",
+            "Fab",
+            "Mar",
+            "Apr",
+            "May",
+            "Jun",
+            "Jul",
+            "Aug",
+            "Sep",
+            "Oct",
+            "Nov",
+            "Dec",
+          ],
+          // Information about the dataset
+          datasets: [
+            {
+              label: "",
+              backgroundColor: "transparent",
+              borderColor: "#4A6CF7",
+              data: [
+                600, 800, 750, 880, 940, 880, 900, 770, 920, 890, 976, 1100,
+              ],
+              pointBackgroundColor: "transparent",
+              pointHoverBackgroundColor: "#4A6CF7",
+              pointBorderColor: "transparent",
+              pointHoverBorderColor: "#fff",
+              pointHoverBorderWidth: 5,
+              pointBorderWidth: 5,
+              pointRadius: 8,
+              pointHoverRadius: 8,
+            },
+          ],
+        },
+
+        // Configuration options
+        defaultFontFamily: "Inter",
+        options: {
+          tooltips: {
+            callbacks: {
+              labelColor: function (tooltipItem, chart) {
+                return {
+                  backgroundColor: "#ffffff",
+                };
+              },
+            },
+            intersect: false,
+            backgroundColor: "#f9f9f9",
+            titleFontFamily: "Inter",
+            titleFontColor: "#8F92A1",
+            titleFontColor: "#8F92A1",
+            titleFontSize: 12,
+            bodyFontFamily: "Inter",
+            bodyFontColor: "#171717",
+            bodyFontStyle: "bold",
+            bodyFontSize: 16,
+            multiKeyBackground: "transparent",
+            displayColors: false,
+            xPadding: 30,
+            yPadding: 10,
+            bodyAlign: "center",
+            titleAlign: "center",
+          },
+
+          title: {
+            display: false,
+          },
+          legend: {
+            display: false,
+          },
+
+          scales: {
+            yAxes: [
+              {
+                gridLines: {
+                  display: false,
+                  drawTicks: false,
+                  drawBorder: false,
+                },
+                ticks: {
+                  padding: 35,
+                  max: 1200,
+                  min: 500,
+                },
+              },
+            ],
+            xAxes: [
+              {
+                gridLines: {
+                  drawBorder: false,
+                  color: "rgba(143, 146, 161, .1)",
+                  zeroLineColor: "rgba(143, 146, 161, .1)",
+                },
+                ticks: {
+                  padding: 20,
+                },
+              },
+            ],
+          },
+        },
+      });
+
+      // =========== chart one end
+
+      // =========== chart two start
+      const ctx2 = document.getElementById("Chart2").getContext("2d");
+      const chart2 = new Chart(ctx2, {
+        // The type of chart we want to create
+        type: "bar", // also try bar or other graph types
+        // The data for our dataset
+        data: {
+          labels: [
+            "Jan",
+            "Fab",
+            "Mar",
+            "Apr",
+            "May",
+            "Jun",
+            "Jul",
+            "Aug",
+            "Sep",
+            "Oct",
+            "Nov",
+            "Dec",
+          ],
+          // Information about the dataset
+          datasets: [
+            {
+              label: "",
+              backgroundColor: "#4A6CF7",
+              barThickness: 6,
+              maxBarThickness: 8,
+              data: [
+                600, 700, 1000, 700, 650, 800, 690, 740, 720, 1120, 876, 900,
+              ],
+            },
+          ],
+        },
+        // Configuration options
+        options: {
+          borderColor: "#F3F6F8",
+          borderWidth: 15,
+          backgroundColor: "#F3F6F8",
+          tooltips: {
+            callbacks: {
+              labelColor: function (tooltipItem, chart) {
+                return {
+                  backgroundColor: "rgba(104, 110, 255, .0)",
+                };
+              },
+            },
+            backgroundColor: "#F3F6F8",
+            titleFontColor: "#8F92A1",
+            titleFontSize: 12,
+            bodyFontColor: "#171717",
+            bodyFontStyle: "bold",
+            bodyFontSize: 16,
+            multiKeyBackground: "transparent",
+            displayColors: false,
+            xPadding: 30,
+            yPadding: 10,
+            bodyAlign: "center",
+            titleAlign: "center",
+          },
+
+          title: {
+            display: false,
+          },
+          legend: {
+            display: false,
+          },
+
+          scales: {
+            yAxes: [
+              {
+                gridLines: {
+                  display: false,
+                  drawTicks: false,
+                  drawBorder: false,
+                },
+                ticks: {
+                  padding: 35,
+                  max: 1200,
+                  min: 0,
+                },
+              },
+            ],
+            xAxes: [
+              {
+                gridLines: {
+                  display: false,
+                  drawBorder: false,
+                  color: "rgba(143, 146, 161, .1)",
+                  zeroLineColor: "rgba(143, 146, 161, .1)",
+                },
+                ticks: {
+                  padding: 20,
+                },
+              },
+            ],
+          },
+        },
+      });
+      // =========== chart two end
+
+      // =========== chart three start
+      const ctx3 = document.getElementById("Chart3").getContext("2d");
+      const chart3 = new Chart(ctx3, {
+        // The type of chart we want to create
+        type: "line", // also try bar or other graph types
+
+        // The data for our dataset
+        data: {
+          labels: [
+            "Jan",
+            "Fab",
+            "Mar",
+            "Apr",
+            "May",
+            "Jun",
+            "Jul",
+            "Aug",
+            "Sep",
+            "Oct",
+            "Nov",
+            "Dec",
+          ],
+          // Information about the dataset
+          datasets: [
+            {
+              label: "Revenue",
+              backgroundColor: "transparent",
+              borderColor: "#4a6cf7",
+              data: [80, 120, 110, 100, 130, 150, 115, 145, 140, 130, 160, 210],
+              pointBackgroundColor: "transparent",
+              pointHoverBackgroundColor: "#4a6cf7",
+              pointBorderColor: "transparent",
+              pointHoverBorderColor: "#fff",
+              pointHoverBorderWidth: 3,
+              pointBorderWidth: 5,
+              pointRadius: 5,
+              pointHoverRadius: 8,
+            },
+            {
+              label: "Profit",
+              backgroundColor: "transparent",
+              borderColor: "#9b51e0",
+              data: [
+                120, 160, 150, 140, 165, 210, 135, 155, 170, 140, 130, 200,
+              ],
+              pointBackgroundColor: "transparent",
+              pointHoverBackgroundColor: "#9b51e0",
+              pointBorderColor: "transparent",
+              pointHoverBorderColor: "#fff",
+              pointHoverBorderWidth: 3,
+              pointBorderWidth: 5,
+              pointRadius: 5,
+              pointHoverRadius: 8,
+            },
+            {
+              label: "Order",
+              backgroundColor: "transparent",
+              borderColor: "#f2994a",
+              data: [180, 110, 140, 135, 100, 90, 145, 115, 100, 110, 115, 150],
+              pointBackgroundColor: "transparent",
+              pointHoverBackgroundColor: "#f2994a",
+              pointBorderColor: "transparent",
+              pointHoverBorderColor: "#fff",
+              pointHoverBorderWidth: 3,
+              pointBorderWidth: 5,
+              pointRadius: 5,
+              pointHoverRadius: 8,
+            },
+          ],
+        },
+
+        // Configuration options
+        options: {
+          tooltips: {
+            intersect: false,
+            backgroundColor: "#fbfbfb",
+            titleFontColor: "#8F92A1",
+            titleFontSize: 16,
+            titleFontFamily: "Inter",
+            titleFontStyle: "400",
+            bodyFontFamily: "Inter",
+            bodyFontColor: "#171717",
+            bodyFontSize: 16,
+            multiKeyBackground: "transparent",
+            displayColors: false,
+            xPadding: 30,
+            yPadding: 15,
+            borderColor: "rgba(143, 146, 161, .1)",
+            borderWidth: 1,
+            title: false,
+          },
+
+          title: {
+            display: false,
+          },
+
+          layout: {
+            padding: {
+              top: 0,
+            },
+          },
+
+          legend: false,
+
+          scales: {
+            yAxes: [
+              {
+                gridLines: {
+                  display: false,
+                  drawTicks: false,
+                  drawBorder: false,
+                },
+                ticks: {
+                  padding: 35,
+                  max: 300,
+                  min: 50,
+                },
+              },
+            ],
+            xAxes: [
+              {
+                gridLines: {
+                  drawBorder: false,
+                  color: "rgba(143, 146, 161, .1)",
+                  zeroLineColor: "rgba(143, 146, 161, .1)",
+                },
+                ticks: {
+                  padding: 20,
+                },
+              },
+            ],
+          },
+        },
+      });
+      // =========== chart three end
+
+      // ================== chart four start
+      const ctx4 = document.getElementById("Chart4").getContext("2d");
+      const chart4 = new Chart(ctx4, {
+        // The type of chart we want to create
+        type: "bar", // also try bar or other graph types
+        // The data for our dataset
+        data: {
+          labels: ["Jan", "Fab", "Mar", "Apr", "May", "Jun"],
+          // Information about the dataset
+          datasets: [
+            {
+              label: "",
+              backgroundColor: "#4A6CF7",
+              barThickness: "flex",
+              maxBarThickness: 8,
+              data: [600, 700, 1000, 700, 650, 800],
+            },
+            {
+              label: "",
+              backgroundColor: "#d50100",
+              barThickness: "flex",
+              maxBarThickness: 8,
+              data: [690, 740, 720, 1120, 876, 900],
+            },
+          ],
+        },
+        // Configuration options
+        options: {
+          borderColor: "#F3F6F8",
+          borderWidth: 15,
+          backgroundColor: "#F3F6F8",
+          tooltips: {
+            callbacks: {
+              labelColor: function (tooltipItem, chart) {
+                return {
+                  backgroundColor: "rgba(104, 110, 255, .0)",
+                };
+              },
+            },
+            backgroundColor: "#F3F6F8",
+            titleFontColor: "#8F92A1",
+            titleFontSize: 12,
+            bodyFontColor: "#171717",
+            bodyFontStyle: "bold",
+            bodyFontSize: 16,
+            multiKeyBackground: "transparent",
+            displayColors: false,
+            xPadding: 30,
+            yPadding: 10,
+            bodyAlign: "center",
+            titleAlign: "center",
+          },
+
+          title: {
+            display: false,
+          },
+          legend: {
+            display: false,
+          },
+
+          scales: {
+            yAxes: [
+              {
+                gridLines: {
+                  display: false,
+                  drawTicks: false,
+                  drawBorder: false,
+                },
+                ticks: {
+                  padding: 35,
+                  max: 1200,
+                  min: 0,
+                },
+              },
+            ],
+            xAxes: [
+              {
+                gridLines: {
+                  display: false,
+                  drawBorder: false,
+                  color: "rgba(143, 146, 161, .1)",
+                  zeroLineColor: "rgba(143, 146, 161, .1)",
+                },
+                ticks: {
+                  padding: 20,
+                },
+              },
+            ],
+          },
+        },
+      });
+      // =========== chart four end
+    </script>
+  </body>
 </html>
-
