@@ -45,7 +45,7 @@
           </a>
           <ul id="ddmenu_2" class="collapse dropdown-nav">
             <li>
-              <a href="settings.html">Visi dan Misi</a>
+              <a href="{{ route('visiMisi') }}">Visi dan Misi</a>
             </li>
             <li>
               <a href="blank-page.html">Tentang Kami</a>
@@ -221,11 +221,11 @@
             <span class="text">Kontak</span>
           </a>
         </li>
-        @if (auth()->user('role') == 'superadmin')
+        @if (auth()->user()->role == 'superadmin')
         <li class="nav-item">
           <a href="tables.html">
             <span class="icon">
-             <i class="lni lni-phone"></i>
+             <i class="lni lni-user"></i>
             </span>
             <span class="text">Admin</span>
           </a>

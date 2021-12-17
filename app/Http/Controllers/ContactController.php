@@ -108,12 +108,6 @@ class ContactController extends Controller
         else{
             $valType = 'required|unique:contacts';
         }
-        $data = [
-            'uuid' =>  $contact->uuid,
-            'type' => $request->type,
-            'content' => $request->content,
-            'slug' => Str::slug($request->type.$contact->uuid),
-        ];
         $request->validate([
             'type' => $valType,
             'content' => 'required',
@@ -122,6 +116,12 @@ class ContactController extends Controller
             'type.unique' => "Nama telah terdaftar",
             'content.required' => "Isi tidak boleh kosong "
         ]);
+        $data = [
+            'uuid' =>  $contact->uuid,
+            'type' => $request->type,
+            'content' => $request->content,
+            'slug' => Str::slug($request->type.$contact->uuid),
+        ];
         DB::beginTransaction();
         try {
             Contact::where('id', $contact->id)->update($data);

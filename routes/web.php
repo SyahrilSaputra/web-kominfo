@@ -5,6 +5,7 @@ use App\Http\Controllers\{
     LoginController,
     ContactController,
     DashboardController,
+    VisimisiController
 };
 
 /*
@@ -40,7 +41,15 @@ Route::group(['middleware' => ['auth', 'cekrole:admin,superadmin']], function ()
         });
         Route::group(['prefix' => 'profile'], function(){
             Route::group(['prefix' => 'visi-misi'], function(){
-                Route::get('/', [ProfileController::class, 'visi-misi'])->name('visiMisi');
+                Route::get('/', [VisimisiController::class, 'visiMisi'])->name('visiMisi');
+                Route::get('/edit-visi-misi/{visimisi:uuid}', [VisimisiController::class, 'edit'])->name('visiMisi.edit');
+                Route::patch('/update-visimisi/{visimisi:uuid}', [VisimisiController::class, 'update'])->name('visiMisi.update');
+            });
+            Route::group(['prefix' => 'tentang-kami'], function(){
+                Route::get('/', [ProfileController::class, 'tentang-kami'])->name('tentangKami');
+            });
+            Route::group(['prefix' => 'pimpinan'], function(){
+                Route::get('/', [ProfileController::class, 'pimpinan'])->name('pimpinan');
             });
         });
     });
