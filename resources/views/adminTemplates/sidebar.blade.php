@@ -51,7 +51,7 @@
               <a href="{{ route('tentangKami') }}">Tentang Kami</a>
             </li>
             <li>
-              <a href="blank-page.html">Pimpinan</a>
+              <a href="{{ route('pimpinan') }}">Pimpinan</a>
             </li>
           </ul>
         </li>

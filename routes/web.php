@@ -6,7 +6,8 @@ use App\Http\Controllers\{
     ContactController,
     DashboardController,
     VisimisiController,
-    TentangkamiController
+    TentangkamiController,
+    PimpinanController,
 };
 
 /*
@@ -52,7 +53,9 @@ Route::group(['middleware' => ['auth', 'cekrole:admin,superadmin']], function ()
                 Route::patch('/update-tentangkami/{tentangkami:uuid}', [TentangkamiController::class, 'update'])->name('tentangKami.update');
             });
             Route::group(['prefix' => 'pimpinan'], function(){
-                Route::get('/', [ProfileController::class, 'pimpinan'])->name('pimpinan');
+                Route::get('/', [PimpinanController::class, 'index'])->name('pimpinan');
+                Route::get('/edit-pimpinan/{pimpinan:uuid}', [PimpinanController::class, 'edit'])->name('pimpinan.edit');
+                Route::patch('/update-pimpinan/{pimpinan:uuid}', [PimpinanController::class, 'update'])->name('pimpinan.update');
             });
         });
     });
