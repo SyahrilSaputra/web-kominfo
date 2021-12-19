@@ -8,6 +8,7 @@ use App\Http\Controllers\{
     VisimisiController,
     TentangkamiController,
     PimpinanController,
+    GaleriController,
 };
 
 /*
@@ -57,6 +58,13 @@ Route::group(['middleware' => ['auth', 'cekrole:admin,superadmin']], function ()
                 Route::get('/edit-pimpinan/{pimpinan:uuid}', [PimpinanController::class, 'edit'])->name('pimpinan.edit');
                 Route::patch('/update-pimpinan/{pimpinan:uuid}', [PimpinanController::class, 'update'])->name('pimpinan.update');
             });
+        });
+        Route::group(['prefix' => 'galeri'], function(){
+            Route::get('/', [GaleriController::class, 'index'])->name('galeri');
+            Route::get('add-galeri', [GaleriController::class, 'create'])->name('galeri.add');
+            Route::post('/galeri-store', [GaleriController::class, 'store'])->name('galeri.store');
+            Route::get('/galeri-show/{galeri:uuid}', [GaleriController::class, 'show'])->name('galeri.show');
+            Route::get('/galeri-delete/{id}', [GaleriController::class, 'destroy']);
         });
     });
 });

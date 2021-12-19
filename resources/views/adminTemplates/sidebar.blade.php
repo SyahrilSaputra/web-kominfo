@@ -56,7 +56,7 @@
           </ul>
         </li>
         <li class="nav-item">
-          <a href="invoice.html">
+          <a href="{{ route('galeri') }}">
             <span class="icon">
               <svg
                 width="22"
@@ -70,7 +70,7 @@
                 />
               </svg>
             </span>
-            <span class="text">Invoice</span>
+            <span class="text">Galeri</span>
           </a>
         </li>
         <li class="nav-item nav-item-has-children">

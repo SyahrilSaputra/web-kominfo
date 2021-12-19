@@ -110,7 +110,7 @@ class PimpinanController extends Controller
                 // $request->file('cover')->store('photos/information-img');
             }
             DB::commit();
-            return redirect()->route('pimpinan')->with('toast_success',$request->nama . ' berhasil diganti');
+            return redirect()->route('pimpinan')->with('success', $request->nama . ' berhasil diganti');
         } catch (Error $e) {
             DB::rollBack();
             dd($e);
