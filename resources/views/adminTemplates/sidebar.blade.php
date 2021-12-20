@@ -223,7 +223,7 @@
         </li>
         @if (auth()->user()->role == 'superadmin')
         <li class="nav-item">
-          <a href="tables.html">
+          <a href="{{ route('admin') }}">
             <span class="icon">
              <i class="lni lni-user"></i>
             </span>

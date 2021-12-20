@@ -9,6 +9,7 @@ use App\Http\Controllers\{
     TentangkamiController,
     PimpinanController,
     GaleriController,
+    UserController,
 };
 
 /*
@@ -69,4 +70,14 @@ Route::group(['middleware' => ['auth', 'cekrole:admin,superadmin']], function ()
     });
 });
 Route::group(['middleware' => ['auth', 'cekrole:superadmin']], function () {
+    Route::group(['prefix' => 'dashboard'], function(){
+        Route::group(['prefix' => 'admin'], function(){
+            Route::get('/admin', [UserController::class, 'index'])->name('admin');
+            Route::get('/create-admin', [UserController::class, 'create'])->name('admin.create');
+            Route::post('/store-admin', [UserController::class, 'store'])->name('admin.store');
+            Route::get('/edit-admin/{user:id}', [UserController::class, 'edit'])->name('admin.edit');
+            Route::patch('/update-admin/{user:id}', [UserController::class, 'update'])->name('admin.update');
+            Route::get('/delete-admin/{user:id}', [UserController::class, 'destroy'])->name('admin.delete');
+        });
+    });
 });
