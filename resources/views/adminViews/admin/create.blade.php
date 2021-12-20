@@ -23,6 +23,10 @@
                     @enderror
                 </div>
                 <div class="form-group">
+                    <label>Role</label>
+                    <input class="form-control" value="admin" readonly>
+                </div>
+                <div class="form-group">
                     <label class=" @error('password') text-danger @enderror">Password</label>
                     <input type="text" class="form-control @error('password') is-invalid @enderror" name="password">
                     @error('password')

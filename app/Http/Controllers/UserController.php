@@ -18,7 +18,7 @@ class UserController extends Controller
     public function index()
     {
         $data = [
-            'admin' => User::orderBy('created_at', 'desc')->get()
+            'admin' => User::where('role', 'admin')->orderBy('created_at', 'desc')->get()
         ];
         return view('adminViews.admin.index', $data);
     }

@@ -24,6 +24,10 @@
                     @enderror
                 </div>
                 <div class="form-group">
+                    <label>Role</label>
+                    <input class="form-control" value="{{ $admin->role }}" readonly>
+                </div>
+                <div class="form-group">
                     <label class=" @error('password') text-danger @enderror">Password Baru (Optional)</label>
                     <input type="text" class="form-control @error('password') is-invalid @enderror" id="exampleInputName1" name="password">
                     @error('password')
