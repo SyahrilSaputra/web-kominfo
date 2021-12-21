@@ -7,6 +7,13 @@ use Illuminate\Support\Facades\Auth;
 
 class LoginController extends Controller
 {
+    public function login(){
+        if(auth()->user('name')){
+            return redirect()->route('dashboard');
+        }else{
+            return view('loginViews.login');
+        }
+    }
     public function postlogin(Request $request)
     {
         if (Auth::attempt($request->only('email', 'password'))) {

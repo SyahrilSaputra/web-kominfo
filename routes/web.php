@@ -10,6 +10,7 @@ use App\Http\Controllers\{
     PimpinanController,
     GaleriController,
     UserController,
+    LandingController
 };
 
 /*
@@ -24,8 +25,10 @@ use App\Http\Controllers\{
 */
 
 
-
-Route::get('/login', function () { return view('loginViews.login'); })->name('login');
+// Landing Route
+Route::get('/', [LandingController::class, 'index'])->name('landing');
+// End Landing Route
+Route::get('/login', [LoginController::class, 'login'])->name('login');
 Route::get('/logout', [LoginController::class, 'logout'])->name('logout');
 Route::post('/postlogin', [LoginController::class, 'postlogin'])->name('postlogin');
 // Route::group(['middleware' => ['auth', 'cekrole:admin,superadmin']], function () {
