@@ -10,7 +10,8 @@ use App\Http\Controllers\{
     PimpinanController,
     GaleriController,
     UserController,
-    LandingController
+    LandingController,
+    InformasiController
 };
 
 /*
@@ -69,6 +70,16 @@ Route::group(['middleware' => ['auth', 'cekrole:admin,superadmin']], function ()
             Route::post('/galeri-store', [GaleriController::class, 'store'])->name('galeri.store');
             Route::get('/galeri-show/{galeri:uuid}', [GaleriController::class, 'show'])->name('galeri.show');
             Route::get('/galeri-delete/{id}', [GaleriController::class, 'destroy']);
+        });
+        Route::group(['prefix' => 'informasi'], function(){
+            Route::get('/', [InformasiController::class, 'index'])->name('informasi');
+            Route::get('create-informasi', [InformasiController::class, 'create'])->name('informasi.add');
+            Route::post('add-informasi', [InformasiController::class, 'store'])->name('informasi.store');
+            Route::get('/detail-informasi/{informasi:slug}', [InformasiController::class, 'show'])->name('informasi.detail');
+            Route::get('/edit-informasi/{informasi:slug}', [InformasiController::class, 'edit'])->name('informasi.edit');
+            Route::patch('/update-informasi/{informasi:slug}', [InformasiController::class, 'update'])->name('informasi.update');
+            Route::get('/informasi-img-delete/{informasi_image:id}', [InformasiController::class, 'deleteImg'])->name('informasiImg.delete');
+            Route::get('/informasi-delete/{informasi:slug}', [InformasiController::class, 'destroy'])->name('informasi.delete');
         });
     });
 });

@@ -18,6 +18,14 @@
     <link rel="stylesheet" href="{{ asset('') }}assets/admins/css/fullcalendar.css" />
     <link rel="stylesheet" href="{{ asset('') }}assets/admins/css/fullcalendar.css" />
     <link rel="stylesheet" href="{{ asset('') }}assets/admins/css/main.css" />
+    <style>
+      a{
+        text-decoration: none;
+      }
+      a:hover{
+        color:white !important;
+      }
+    </style>
     @yield('css')
   </head>
   <body>
@@ -231,7 +239,7 @@
 
       <!-- ========== section start ========== -->
       <section class="section">
-        <div class="bg-light py-5 mt-3">
+        <div class=" py-5 mt-3">
           <div class="mx-5" style="">
             @yield('dashboardContent')
           </div>
