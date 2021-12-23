@@ -46,4 +46,10 @@ class VisimisiController extends Controller
             dd($e);
         }
     }
+    public function visi_misi(){
+        $data = [
+            'visi' => Visimisi::first()
+        ];
+        return view('userViews.visimisi', $data);
+    }
 }

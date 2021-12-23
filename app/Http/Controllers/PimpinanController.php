@@ -127,4 +127,11 @@ class PimpinanController extends Controller
     {
         //
     }
+    public function pimpinan_user()
+    {
+        $data = [
+            'pimpinan' => Pimpinan::first()
+        ];
+        return view('userViews.pimpinan', $data);
+    }
 }

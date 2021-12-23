@@ -9,7 +9,6 @@ use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 use App\Models\InformasiImage;
 use Illuminate\Support\Facades\DB;
-use Illuminate\Http\UploadedFile;
 
 use Illuminate\Support\Facades\File;
 

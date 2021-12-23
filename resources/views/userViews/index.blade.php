@@ -1,341 +1,162 @@
 @include('userViews.userTemp.header')
-  <section id="homeIntro" class="parallax first-widget">
-    <div class="parallax-overlay">
-      <div class="container home-intro-content">
-          <div class="row">
-            <div class="col-md-12">
-             <center>
-              <h2>Selamat Datang di Website Kominfo Kabupaten Bone</h2>
-              <p>Website sistem informasi kementrian komunikasi dan informatika kabupaten bone</p>
-             </center>
-            </div> <!-- /.col-md-12 -->
-          </div> <!-- /.row -->
-      </div> <!-- /.container -->
-    </div> <!-- /.parallax-overlay -->
-</section> <!-- /#homeIntro -->
-<section class="light-content services">
-  <div class="container">
-    <div class="row">
-
-      <div class="col-md-4 col-sm-4">
-        <div class="service-box-wrap">
-          <div class="service-icon-wrap">
-            <i class="fa fa-umbrella fa-2x"></i>
-          </div> <!-- /.service-icon-wrap -->
-          <div class="service-cnt-wrap">
-            <h3 class="service-title">Easy Theme Colors</h3>
-            <p>There are 4 color themes (blue, green, red, orange) and this one is blue.</p>
-          </div> <!-- /.service-cnt-wrap -->
-        </div> <!-- /.service-box-wrap -->
-      </div> <!-- /.col-md-4 -->
-
-      <div class="col-md-4 col-sm-4">
-        <div class="service-box-wrap">
-          <div class="service-icon-wrap">
-            <i class="fa fa-mobile-phone fa-2x"></i>
-          </div> <!-- /.service-icon-wrap -->
-          <div class="service-cnt-wrap">
-            <h3 class="service-title">Change Icons</h3>
-            <p>Check <a rel="nofollow" href="http://fontawesome.io/icons/" target="_blank">FontAwesome</a> for your suitable icons. Example: &lt;i class=&quot;fa fa-download&quot;&gt;&lt;/i&gt;</p>
-          </div> <!-- /.service-cnt-wrap -->
-        </div> <!-- /.service-box-wrap -->
-      </div> <!-- /.col-md-4 -->
-
-      <div class="col-md-4 col-sm-4">
-        <div class="service-box-wrap">
-          <div class="service-icon-wrap">
-            <i class="fa fa-pencil-square-o fa-2x"></i>
-          </div> <!-- /.service-icon-wrap -->
-          <div class="service-cnt-wrap">
-            <h3 class="service-title">Pixel Perfect Design</h3>
-            <p>Based on a 12 column grid system, with every pixel snapped.</p>
-          </div> <!-- /.service-cnt-wrap -->
-        </div> <!-- /.service-box-wrap -->
-      </div> <!-- /.col-md-4 -->
-
-    </div>
-
-   
-  </div> <!-- /.container -->
-</section> <!-- /.services -->
-
-<section class="dark-content portfolio">
-  <div class="container">
-    <div class="row">
-      <div class="col-md-12">
-        <div class="section-header">
-          <h2 class="section-title">Our Lovely Portfolio</h2>
-          <p class="section-desc">Everything you need to create a professional website.</p>
-        </div> <!-- /.section-header -->
-      </div> <!-- /.col-md-12 -->
-    </div> <!-- /.row -->
-  </div> <!-- /.container -->
-  
-  <div id="portfolio-carousel" class="portfolio-carousel portfolio-holder">
-    <div class="item">
-      <div class="thumb-post">
-        <div class="overlay">
-          <div class="overlay-inner">
-            <div class="portfolio-infos">
-              <span class="meta-category">Dashboard Template</span>
-              <h3 class="portfolio-title"><a href="project-slideshow.html">Visual Admin</a></h3>
-            </div>
-            <div class="portfolio-expand">
-              <a class="fancybox" href="{{ asset('') }}assets/user/images/includes/project1.jpg" title="Visual Admin">
-                <i class="fa fa-expand"></i>
-              </a>
-            </div>
-          </div>
-        </div>
-        <img src="{{ asset('') }}assets/user/images/includes/project1.jpg" alt="Visual Admin">
-      </div>
-    </div> <!-- /.item -->
-    <div class="item">
-      <div class="thumb-post">
-        <div class="overlay">
-          <div class="overlay-inner">
-            <div class="portfolio-infos">
-              <span class="meta-category">Mobile Ready</span>
-              <h3 class="portfolio-title"><a href="project-slideshow.html">Compass Template</a></h3>
-            </div>
-            <div class="portfolio-expand">
-              <a class="fancybox" href="{{ asset('') }}assets/user/images/includes/project2.jpg" title="Compass Template">
-                <i class="fa fa-expand"></i>
-              </a>
-            </div>
-          </div>
-        </div>
-        <img src="{{ asset('') }}assets/user/images/includes/project2.jpg" alt="Compass Template">
-      </div>
-    </div> <!-- /.item -->
-    <div class="item">
-      <div class="thumb-post">
-        <div class="overlay">
-          <div class="overlay-inner">
-            <div class="portfolio-infos">
-              <span class="meta-category">Responsive Design</span>
-              <h3 class="portfolio-title"><a href="project-slideshow.html">Awesome Theme</a></h3>
-            </div>
-            <div class="portfolio-expand">
-              <a class="fancybox" href="{{ asset('') }}assets/user/images/includes/project3.jpg" title="Awesome Theme">
-                <i class="fa fa-expand"></i>
-              </a>
-            </div>
-          </div>
-        </div>
-        <img src="{{ asset('') }}assets/user/images/includes/project3.jpg" alt="Awesome Theme">
-      </div>
-    </div> <!-- /.item -->
-    <div class="item">
-      <div class="thumb-post">
-        <div class="overlay">
-          <div class="overlay-inner">
-            <div class="portfolio-infos">
-              <span class="meta-category">Portfolio</span>
-              <h3 class="portfolio-title"><a href="project-slideshow.html">Volton Personal Site</a></h3>
-            </div>
-            <div class="portfolio-expand">
-              <a class="fancybox" href="{{ asset('') }}assets/user/images/includes/project4.jpg" title="Volton Personal Site">
-                <i class="fa fa-expand"></i>
-              </a>
-            </div>
-          </div>
-        </div>
-        <img src="images/includes/project4.jpg" alt="Volton Personal Site">
-      </div>
-    </div> <!-- /.item -->
-    <div class="item">
-      <div class="thumb-post">
-        <div class="overlay">
-          <div class="overlay-inner">
-            <div class="portfolio-infos">
-              <span class="meta-category">Green</span>
-              <h3 class="portfolio-title"><a href="project-slideshow.html">Rectangle Design</a></h3>
-            </div>
-            <div class="portfolio-expand">
-              <a class="fancybox" href="images/includes/project5.jpg" title="Rectangle Design">
-                <i class="fa fa-expand"></i>
-              </a>
-            </div>
-          </div>
-        </div>
-        <img src="images/includes/project5.jpg" alt="Rectangle Design">
-      </div>
-    </div> <!-- /.item -->
-    <div class="item">
-      <div class="thumb-post">
-        <div class="overlay">
-          <div class="overlay-inner">
-            <div class="portfolio-infos">
-              <span class="meta-category">Portfolio</span>
-              <h3 class="portfolio-title"><a href="project-slideshow.html">Masonry Gallery</a></h3>
-            </div>
-            <div class="portfolio-expand">
-              <a class="fancybox" href="images/includes/project6.jpg" title="Masonry Gallery">
-                <i class="fa fa-expand"></i>
-              </a>
-            </div>
-          </div>
-        </div>
-        <img src="images/includes/project6.jpg" alt="Masonry Gallery">
-      </div>
-    </div> <!-- /.item -->
-    <div class="item">
-      <div class="thumb-post">
-        <div class="overlay">
-          <div class="overlay-inner">
-            <div class="portfolio-infos">
-              <span class="meta-category">Branding / Identity</span>
-              <h3 class="portfolio-title"><a href="project-slideshow.html">Gloss Template</a></h3>
-            </div>
-            <div class="portfolio-expand">
-              <a class="fancybox" href="images/includes/project7.jpg" title="Gloss Template">
-                <i class="fa fa-expand"></i>
-              </a>
-            </div>
-          </div>
-        </div>
-        <img src="images/includes/project7.jpg" alt="Gloss Template">
-      </div>
-    </div> <!-- /.item -->
-  </div> <!-- /#owl-demo -->
-</section> <!-- /.portfolio-holder -->
-
-<section class="testimonials-widget">
-  <div class="container">
-    <div class="row">
-      <div class="col-md-12">
-        <div class="bxslider">
-          <div class="testimonial">
-            <div class="testimonial-content">
-              <span class="testimonial-author">Andy Colin - Architect</span>
-              <p class="testimonial-description">Thank you for all your good work in creating theme. They have a ‘presence’ which feels right.</p>
-            </div>
-          </div>
-          <div class="testimonial">
-            <div class="testimonial-content">
-              <span class="testimonial-author">Thomas Teddy - Design Writer</span>
-              <p class="testimonial-description">I love the logo. Particularly how the mark can stand on its own. Nice work! It feels tall and proud and powerful — and I love that. That’s what I was after.</p>
-            </div>
-          </div>
-          <div class="testimonial">
-            <div class="testimonial-content">
-              <span class="testimonial-author">John Willy - Developer</span>
-              <p class="testimonial-description">You’re pretty awesome to work with. Incredibly organized, easy to communicate with, responsive with next iterations, and beautiful work.</p>
-            </div>
-          </div>
-        </div> <!-- /.bxslider -->
-      </div> <!-- /.col-md-12 -->
-    </div> <!-- /.row -->
-  </div> <!-- /.container -->
-</section> <!-- /.testimonials-widget -->
-
-<section class="light-content our-team">
-  <div class="container">
-    <div class="row">
-      <div class="col-md-12">
-        <div class="section-header">
-          <h2 class="section-title">Meet our happy staff</h2>
-          <p class="section-desc">Medigo is the automated way to keep track of what everyone is working on.</p>
-        </div> <!-- /.section-header -->
-      </div> <!-- /.col-md-12 -->
-    </div> <!-- /.row -->
-  </div> <!-- /.container -->
-  <div class="team-members">
+<header class="header-2">
+  <div class="page-header min-vh-75 relative" style="background-image: url('{{ asset('') }}assets/index.jpg')">
+    <span class="mask bg-gradient-dark opacity-7"></span>
     <div class="container">
       <div class="row">
+        <div class="col-lg-7 text-center mx-auto">
+          <h1 class="text-white border-dark pt-3 mt-n5" style="text-shadow: 3px 2px 1px black;">Selamat Datang Di Website Kominfo Bone</h1>
+          <p class="lead text-white mt-3" style="text-shadow: 3px 2px 1px black;">Website Company Profile Kementrian Komunikasi Informatika dan Persandian Kabupaten Bone</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
 
-        <div class="col-md-4 col-sm-4">
-          <div class="team-member">
-            <div class="thumb-post">
-              <img src="images/includes/member1.jpg" alt="">
-              <span class="member-role">Marketing Manager</span>
-            </div>
-            <div class="member-content">
-              <h4 class="member-name">Amy Groovy</h4>
-              <p>Duis vitae consequat neque. Nulla pharetra eleifend nulla. </p>
-            </div>
-          </div> <!-- /.team-member -->
-        </div> <!-- /.col-md-4 -->
+<div class="card card-body blur shadow-blur mx-3 mx-md-4 mt-n6">
 
-        <div class="col-md-4 col-sm-4">
-          <div class="team-member">
-            <div class="thumb-post">
-              <img src="images/includes/member2.jpg" alt="">
-              <span class="member-role">Web Developer</span>
+<section class="pt-3 pb-4" id="count-stats">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-9 mx-auto py-3">
+        <div class="row">
+          <div class="col-md-4 position-relative">
+            <div class="p-3 text-center">
+              <h1 class="text-gradient text-info"><span id="state1" countTo="{{ $jumInfo }}">0</span></h1>
+              <h5 class="mt-3">Informasi</h5>
+              <p class="text-sm font-weight-normal">Infromasi Terkait Kementrian Komunikasi dan Informatika Kabupaten Bone</p>
             </div>
-            <div class="member-content">
-              <h4 class="member-name">Candy Sharp</h4>
-              <p>Duis vitae consequat neque. Nulla pharetra eleifend nulla. </p>
+            <hr class="vertical dark">
+          </div>
+          <div class="col-md-4 position-relative">
+            <div class="p-3 text-center">
+              <h1 class="text-gradient text-info"> <span id="state2" countTo="{{ $jumKontak }}">0</span></h1>
+              <h5 class="mt-3">Kontak</h5>
+              <p class="text-sm font-weight-normal">Kontak Terkait Kementrian Komunikasi dan Informatika Kabupaten Bone</p>
             </div>
-          </div> <!-- /.team-member -->
-        </div> <!-- /.col-md-4 -->
+            <hr class="vertical dark">
+          </div>
+          <div class="col-md-4">
+            <div class="p-3 text-center">
+              <h1 class="text-gradient text-info" id="state3" countTo="{{ $jumGaleri }}">0</h1>
+              <h5 class="mt-3">Galeri</h5>
+              <p class="text-sm font-weight-normal">Galeri Kementrian Komunikasi dan Informatika Kabupaten Bone</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
-        <div class="col-md-4 col-sm-4">
-          <div class="team-member">
-            <div class="thumb-post">
-              <img src="images/includes/member3.jpg" alt="">
-              <span class="member-role">Graphic Designer</span>
-            </div>
-            <div class="member-content">
-              <h4 class="member-name">Linda Master</h4>
-              <p>Duis vitae consequat neque. Nulla pharetra eleifend nulla. </p>
-            </div>
-          </div> <!-- /.team-member -->
-        </div> <!-- /.col-md-4 -->
 
-      </div> <!-- /.row -->
-    </div> <!-- /.container -->
-  </div> <!-- /.team-members -->
-</section> <!-- /.our-team -->
+<section class="my-5 py-5">
+  <div class="container">
+    <center>
+      <span class="badge bg-info mb-3" ><h4 class="text-light fw-bold">Tentang Kami</h4></span>
+    </center>
+    <div class="row">
+      <div class="col-lg-5">
+        <img src="{{ asset('')}}assets/index1.jpg" style="width:100%; border-radius: 10px;">
+      </div>
+      <div class="col-lg-7">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title text-center">{{ $tentang->title }}</h5>
+            <div>
+              {!! str_word_count($tentang->content) > 600 ? substr($tentang->content,0,600)."..." : $tentang->content !!}
+              @if (str_word_count($tentang->content) > 600)
+                  <a href="{{ route('tentang') }}" class="text-info"><i>selengkapnya</i></a>
+              @endif
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
-<section id="blogPosts" class="parallax">
-    <div class="parallax-overlay">
-      <div class="container">
-          <div class="row">
-            <div class="col-md-12">
-              <div class="section-header">
-            <h2 class="section-title">Recent from our blog</h2>
-            <p class="section-desc">Everything you need to create a professional website.</p>
-          </div> <!-- /.section-header -->
-            </div> <!-- /.col-md-12 -->
-          </div> <!-- /.row -->
-          <div class="row latest-posts">
-            <div class="col-md-4 col-sm-6">
-              <div class="blog-post clearfix">
-                <div class="thumb-post">
-                  <a href="blog-single.html"><img src="images/includes/blogthumb1.jpg" alt="" class="img-circle"></a>
-                </div>
-                <div class="blog-post-content">
-                  <h4 class="post-title"><a href="blog-single.html">Getting Creative With the Google Maps API</a></h4>
-                  <span class="meta-post-date">12 February 2084</span>
-                </div>
-              </div> <!-- /.blog-post -->
-            </div> <!-- /.col-md-4 -->
-            <div class="col-md-4 col-sm-6">
-              <div class="blog-post clearfix">
-                <div class="thumb-post">
-                  <a href="blog-single.html"><img src="images/includes/blogthumb2.jpg" alt="" class="img-circle"></a>
-                </div>
-                <div class="blog-post-content">
-                  <h4 class="post-title"><a href="blog-single.html">Design Deliverables – easily share project</a></h4>
-                  <span class="meta-post-date">10 February 2084</span>
-                </div>
-              </div> <!-- /.blog-post -->
-            </div> <!-- /.col-md-4 -->
-            <div class="col-md-4 col-sm-6">
-              <div class="blog-post clearfix">
-                <div class="thumb-post">
-                  <a href="blog-single.html"><img src="images/includes/blogthumb3.jpg" alt="" class="img-circle"></a>
-                </div>
-                <div class="blog-post-content">
-                  <h4 class="post-title"><a href="blog-single.html">Using Templates to Get Your Clients Thinking</a></h4>
-                  <span class="meta-post-date">8 February 2084</span>
-                </div>
-              </div> <!-- /.blog-post -->
-            </div> <!-- /.col-md-4 -->
-          </div> <!-- /.row -->
-      </div> <!-- /.container -->
-    </div> <!-- /.parallax-overlay -->
-</section> <!-- /#blogPosts -->
+<div class="container mt-sm-5">
+  <div class="page-header py-6 py-md-5 my-sm-3 mb-3 border-radius-xl" style="background-image: url('{{ asset('') }}assets/index.jpg');" loading="lazy">
+    <span class="mask bg-gradient-dark"></span>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-6 ms-lg-5">
+          <h4 class="text-white">Informasi Terbaru</h4>
+          <h1 class="text-white">{{ $newinfo->title }}</h1>
+          <h5 class="text-white">{!! substr($newinfo->content,0,100) !!}</h5>
+          <a href="" class="text-white icon-move-right">
+            Selengkapnya
+            <i class="fas fa-arrow-right text-sm ms-1"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<section class="my-5 py-5">
+  <div class="container">
+    <center>
+      <span class="badge bg-info mb-3"><h4 class="text-light fw-bold">Direktur</h4></span>
+      <div class="card" style="width: 16rem;">
+        <img src="{{ asset('') }}storage/photos/pimpinan-img/{{ $pimpinan->image }}" alt="" class="img-thumbnail img-fluid">
+      </div>
+      <h2 class="text-dark mb-0">{{ $pimpinan->nama }}</h2>
+      <p class="lead">{{ $pimpinan->jabatan }}</p>
+    </center>
+  </div>
+</section>
+
+<section class="my-5">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-5 col-12 ">
+        <div class="card mb-3" style="width: 100%;">
+          <div class="card-body">
+            <h3 class="text-gradient text-info mb-0">Kontak</h3>
+            @foreach ($kontak as $k)
+              <div>
+                <h4 class="my-2">{{ $k->type }}</h4>
+                <p class="pe-md-5 mb-4">
+                  {{ $k->content }}
+                </p>
+              </div>
+            @endforeach
+          </div>
+        </div>
+      </div>
+      <div class="col-md-7 col-12 my-auto">
+        <a href="https://www.creative-tim.com/product/material-kit-pro?ref=index-mk2">
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4997.526710984576!2d120.30605431534914!3d-4.538784149101996!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dbde5109f3723e1%3A0x9da87e4367e8ce20!2sDinas%20Kominfo%20dan%20Persandian%20Kabupaten%20Bone!5e1!3m2!1sid!2sid!4v1640153235475!5m2!1sid!2sid" style="width: 100%; height:400px;" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- -------   END PRE-FOOTER 2 - simple social line w/ title & 3 buttons    -------- -->
+
 @include('userViews.userTemp.footer')
+
+  
+
+  
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--   Core JS Files   -->

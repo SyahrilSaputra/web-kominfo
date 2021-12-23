@@ -109,4 +109,10 @@ class TentangkamiController extends Controller
     {
         //
     }
+    public function tentang(){
+        $data = [
+            'tentang' => Tentangkami::first()
+        ];
+        return view('userViews.tentang', $data);
+    }
 }

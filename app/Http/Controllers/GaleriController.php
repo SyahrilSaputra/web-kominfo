@@ -127,4 +127,10 @@ class GaleriController extends Controller
             dd($e);
         }
     }
+    public function galeri_user(){
+        $data = [
+            'galeri' => Galeri::all()
+        ];
+        return view('userViews.galeri', $data);
+    }
 }

@@ -23,7 +23,7 @@
                     @enderror
                 </div>
                 <div class="mb-3">
-                    <label for="jabatan" class="form-label @error('jabatan') text-danger @enderror">Jabartan</label>
+                    <label for="jabatan" class="form-label @error('jabatan') text-danger @enderror">Jabatan</label>
                     <input type="text" class="form-control @error('jabatan') is-invalid @enderror" name="jabatan" value="{{ old('jabatan') ? old('jabatan') : $pimpinan->jabatan }}">
                     @error('jabatan')
                         <p class="text-danger">{{ $message }}</p>

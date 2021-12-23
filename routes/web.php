@@ -28,6 +28,12 @@ use App\Http\Controllers\{
 
 // Landing Route
 Route::get('/', [LandingController::class, 'index'])->name('landing');
+Route::group(['prefix' => 'profile'], function(){
+    Route::get('/tentang-kami', [TentangkamiController::class, 'tentang'])->name('tentang');
+    Route::get('/visi-misi', [VisimisiController::class, 'visi_misi'])->name('visimisi');
+    Route::get('/pimpinan', [PimpinanController::class, 'pimpinan_user'])->name('pimpinan.user');
+});
+Route::get('/galeri', [GaleriController::class, 'galeri_user'])->name('galeri.user');
 // End Landing Route
 Route::get('/login', [LoginController::class, 'login'])->name('login');
 Route::get('/logout', [LoginController::class, 'logout'])->name('logout');
