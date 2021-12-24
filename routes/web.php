@@ -90,12 +90,16 @@ Route::group(['middleware' => ['auth', 'cekrole:admin,superadmin']], function ()
             Route::get('/informasi-img-delete/{informasi_image:id}', [InformasiController::class, 'deleteImg'])->name('informasiImg.delete');
             Route::get('/informasi-delete/{informasi:slug}', [InformasiController::class, 'destroy'])->name('informasi.delete');
         });
+        Route::get('/edit-profil/{user:id}', [UserController::class, 'edit_profile'])->name('edit.profil');
+        Route::patch('/update-profile/{user:id}', [UserController::class, 'update_profile'])->name('profil.update');
+        Route::get('/change-password/{user:id}', [UserController::class, 'change_password'])->name('change.password');
+        Route::patch('/update-password/{user:id}', [UserController::class, 'update_password'])->name('password.update');
     });
 });
 Route::group(['middleware' => ['auth', 'cekrole:superadmin']], function () {
     Route::group(['prefix' => 'dashboard'], function(){
         Route::group(['prefix' => 'admin'], function(){
-            Route::get('/admin', [UserController::class, 'index'])->name('admin');
+            Route::get('/', [UserController::class, 'index'])->name('admin');
             Route::get('/create-admin', [UserController::class, 'create'])->name('admin.create');
             Route::post('/store-admin', [UserController::class, 'store'])->name('admin.store');
             Route::get('/edit-admin/{user:id}', [UserController::class, 'edit'])->name('admin.edit');

@@ -9,7 +9,7 @@
             <h2>{{ $tentangKami->title }}</h2>
         </div>
         <div class="card-body">
-            <div class="container">
+            <div class="mx-1">
                 <div class="my-3">
                     {!! $tentangKami->content !!}
                 </div>

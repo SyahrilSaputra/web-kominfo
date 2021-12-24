@@ -169,4 +169,67 @@ class UserController extends Controller
             dd($e);
         }
     }
+    public function edit_profile(User $user){
+        $data = [
+            'user' => $user
+        ];
+        return view('adminViews.admin.editprofile', $data);
+    }
+    public function update_profile(Request $request, User $user){
+        if($request->email == $user->email){
+            $emailValid = 'required';
+        }else{
+            $emailValid = 'required|unique:users';
+        }
+        $request->validate([
+            'name' => 'required',
+            'email'=> $emailValid
+        ],[
+            'name.required' => 'Nama tidak boleh kosong',
+            'email.required' => 'Email tidak boleh kosong',
+            'email.unique' => 'Email telah terdaftar',
+        ]);
+        $data = [
+            'name' => $request->name,
+            'email' => $request->email
+        ];
+        DB::beginTransaction();
+        try {
+            User::where('id', $user->id)->update($data);
+            DB::commit();
+            return redirect()->route('dashboard');
+        } catch (Error $e) {
+            DB::rollBack();
+            dd($e);
+        }
+    }
+    public function change_password(User $user){
+        $data = [
+            'user' => $user
+        ];
+        return view('adminViews.admin.changepassword', $data);
+    }
+    public function update_password(Request $request, User $user){
+        $request->validate([
+            'oldpassword' => 'required|current_password',
+            'newpassword' => 'required|min:8'
+        ],[
+            'oldpassword.required' => 'Password lama tidak boleh kosong',
+            'oldpassword.current_password' => 'Password salah',
+            'newpassword.required' => 'Password baru tidak boleh kosong',
+            'newpassword.min' => 'Password harus lebih dari 8 karakter'
+        ]);
+        $data = [
+            'password' => bcrypt($request->newpassword),
+        ];
+        DB::beginTransaction();
+        try {
+            User::where('id', $user->id)->update($data);
+            DB::commit();
+            return redirect('logout');
+        } catch (Error $e) {
+            DB::rollBack();
+            dd($e);
+        }
+    }
 }

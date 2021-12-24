@@ -24,6 +24,6 @@ class DashboardController extends Controller
             'newinfo' => Informasi::orderBy('updated_at', 'desc')->first(),
             'kontak' => Contact::all(),
         ];
-        return view('adminViews.dashboard.index');
+        return view('adminViews.dashboard.index', $data);
     }
 }

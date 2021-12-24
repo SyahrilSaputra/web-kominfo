@@ -15,7 +15,7 @@
                 <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
             </div>
             @endif
-            <table class="table-hover table table-striped" id="myTable" >
+            <table class="table-hover table table-striped" id="myTable">
                 <thead>
                     <tr>
                         <th>
@@ -25,7 +25,7 @@
                             Judul
                         </th>
                         <th>
-                            Tanggal Upload
+                            Tanggal 
                         </th>
                         <th class="text-center">
                             Action
@@ -45,9 +45,9 @@
                                 {{ $if->publish_at }}
                             </td>
                             <td nowrap="nowrap">
-                                <a href="{{ route('informasi.detail', ['informasi' => $if->slug]) }}" class="badge bg-success">Detail</a>
-                                <a href="{{ route('informasi.edit', ['informasi' => $if->slug]) }}" class="badge bg-warning">Edit</a>
-                                <a href="{{ route('informasi.delete', ['informasi' => $if->slug]) }}" class="badge bg-danger" onclick="return confirm('Apakah anda yakin ?')">Hapus</a>
+                                <a href="{{ route('informasi.detail', ['informasi' => $if->slug]) }}" class="badge bg-success text-small px-1">Detail</a>
+                                <a href="{{ route('informasi.edit', ['informasi' => $if->slug]) }}" class="badge bg-warning text-small px-1">Edit</a>
+                                <a href="{{ route('informasi.delete', ['informasi' => $if->slug]) }}" class="badge bg-danger text-small px-1" onclick="return confirm('Apakah anda yakin ?')">Hapus</a>
                             </td>
                         </tr>
                     @endforeach
