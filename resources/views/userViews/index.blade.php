@@ -99,7 +99,7 @@
 <section class="my-5 py-5">
   <div class="container">
     <center>
-      <span class="badge bg-info mb-3"><h4 class="text-light fw-bold">Direktur</h4></span>
+      <span class="badge bg-info mb-3"><h4 class="text-light fw-bold">Pimpinan</h4></span>
       <div class="card" style="width: 16rem;">
         <img src="{{ asset('') }}storage/photos/pimpinan-img/{{ $pimpinan->image }}" alt="" class="img-thumbnail img-fluid">
       </div>

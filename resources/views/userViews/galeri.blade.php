@@ -25,8 +25,9 @@
                         <div class="row">
                            @foreach ($galeri as $g)
                             <div class="col-lg-4 col-xl-3 col-sm-6 col-12">
-                              <a class="fancyLink" data-fancybox="gallery" href="{{ asset('') }}storage/photos/galeri-img/{{ $g->img }}" data-caption="{{ $g->title }}"><img src="{{ asset('') }}storage/photos/galeri-img/{{ $g->img }}" alt="" style="width:100%;"></a>
-                              
+                              <div class="mb-2" style="width:100%; height:150px; overflow:hidden; border-radius: 10px;">
+                                <a class="fancyLink" data-fancybox="gallery" href="{{ asset('') }}storage/photos/galeri-img/{{ $g->img }}" data-caption="{{ $g->title }}"><img src="{{ asset('') }}storage/photos/galeri-img/{{ $g->img }}" alt="" style="width:100%;"></a>
+                              </div>
                             </div>
                            @endforeach
                         </div>

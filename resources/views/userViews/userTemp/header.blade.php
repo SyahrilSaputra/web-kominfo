@@ -95,7 +95,7 @@
 						</div>
 					</li>
 					<li class="nav-item dropdown dropdown-hover mx-2">
-						<a href="" class="nav-link ps-2 d-flex cursor-pointer align-items-center">
+						<a href="{{ route('informasi.user') }}" class="nav-link ps-2 d-flex cursor-pointer align-items-center">
 						<i class="material-icons opacity-6 me-2 text-md">dashboard</i>
 						Informasi
 						</a>
@@ -107,7 +107,7 @@
 						</a>
 					</li>
 					<li class="nav-item dropdown dropdown-hover mx-2">
-						<a class="nav-link ps-2 d-flex cursor-pointer align-items-center">
+						<a href="{{ route('kontak.user') }}" class="nav-link ps-2 d-flex cursor-pointer align-items-center">
 						<i class="material-icons opacity-6 me-2 text-md">dashboard</i>
 						Kontak
 						</a>

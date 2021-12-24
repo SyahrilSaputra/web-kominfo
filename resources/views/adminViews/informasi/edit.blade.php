@@ -10,16 +10,16 @@
                 <center>
                    <h3>Gambar</h3>
                     <div class="row">
-                        @if (count($image) > 1) 
                             @foreach ($image as $img)
-                                <div class="col-sm-6 col-lg-4 col-xl-3 d-block">
-                                    <img src="{{ asset('') }}storage/photos/informasi-img/{{ $img->name }}" class="img-thumbnail img-fluid" alt=""><br>
-                                    <a href="{{ route('informasiImg.delete', ['informasi_image' => $img->id]) }}" class="badge bg-danger">Hapus</a>
-                                </div>
+                                @if ($img->name == 'default_informasi.png' && count($image) <= 1 )
+                                    <h5 class="mt-2">Gambar tidak ada</h5>
+                                @else
+                                    <div class="col-sm-6 col-lg-4 col-xl-3 d-block">
+                                        <img src="{{ asset('') }}storage/photos/informasi-img/{{ $img->name }}" class="img-thumbnail img-fluid" alt=""><br>
+                                        <a href="{{ route('informasiImg.delete', ['informasi_image' => $img->id]) }}" class="badge bg-danger">Hapus</a>
+                                    </div>
+                                @endif
                             @endforeach 
-                        @else
-                            <h5 class="mt-2">Gambar tidak ada</h5>
-                        @endif
                         
                     </div>
                 </center>

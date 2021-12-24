@@ -17,7 +17,7 @@
             <section class="my-5 py-5">
                 <div class="container">
                   <center>
-                    <span><h2 class="text-dark fw-bold mb-4">Direktur</h2></span>
+                    <span><h2 class="text-dark fw-bold mb-4">Pimpinan</h2></span>
                     <div class="card" style="width: 16rem;">
                       <img src="{{ asset('') }}storage/photos/pimpinan-img/{{ $pimpinan->image }}" alt="" class="img-thumbnail img-fluid">
                     </div>

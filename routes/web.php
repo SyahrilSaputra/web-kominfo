@@ -34,6 +34,9 @@ Route::group(['prefix' => 'profile'], function(){
     Route::get('/pimpinan', [PimpinanController::class, 'pimpinan_user'])->name('pimpinan.user');
 });
 Route::get('/galeri', [GaleriController::class, 'galeri_user'])->name('galeri.user');
+Route::get('/kontak', [ContactController::class, 'kontak_user'])->name('kontak.user');
+Route::get('/informasi', [InformasiController::class, 'informasi_user'])->name('informasi.user');
+Route::get('/detail-informasi/{informasi:slug}', [InformasiController::class, 'informasi_detail'])->name('informasi.detail.user');
 // End Landing Route
 Route::get('/login', [LoginController::class, 'login'])->name('login');
 Route::get('/logout', [LoginController::class, 'logout'])->name('logout');

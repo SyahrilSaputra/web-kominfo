@@ -151,4 +151,10 @@ class ContactController extends Controller
             dd($e);
         }
     }
+    public function kontak_user(){
+        $data = [
+            'kontak' => Contact::all()
+        ];
+        return view('userViews.kontak', $data);
+    }
 }

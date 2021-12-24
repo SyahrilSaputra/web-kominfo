@@ -173,6 +173,15 @@ class InformasiController extends Controller
                     InformasiImage::create($dataImg);
                     $file->move(public_path() . '/storage/photos/informasi-img', $name);
                 }
+            }else{
+                $img = InformasiImage::where('informasi_id', $info->id)->get();
+                if(count($img) <= 0){
+                    $dataImg = [
+                        'informasi_id' => $info->id,
+                        'name' => 'default_informasi.png',
+                    ];
+                    InformasiImage::create($data);
+                }
             }
             DB::commit();
             return redirect()->route('informasi')->with('success', $request->title. ' berhasil dibuat');
@@ -220,5 +229,19 @@ class InformasiController extends Controller
             DB::rollBack();
             dd($e);
         }
+    }
+    public function informasi_user(){
+        $data = [
+            'informasi' => Informasi::orderBy('updated_at')->get(),
+            'image' => InformasiImage::all()
+        ];
+        return view('userViews.informasi', $data);
+    }
+    public function informasi_detail(Informasi $informasi){
+        $data = [
+            'informasi' => $informasi,
+            'image' => InformasiImage::where('informasi_id', $informasi->id)->get()
+        ];
+        return view('userViews.infoDetail', $data);
     }
 }
