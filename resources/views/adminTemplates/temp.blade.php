@@ -9,7 +9,7 @@
       href="{{ asset('assets/admin/images/kominfo.png') }}"
       type="image/x-icon"
     />
-    <title>Kementrian Komunikasi Informatika dan Persandian Kabupaten Bone</title>
+    <title>Dinas Komunikasi Informatika dan Persandian Kabupaten Bone</title>
 
     <!-- ========== All CSS files linkup ========= -->
     <link rel="stylesheet" href="{{ asset('') }}assets/admins/css/bootstrap.min.css" />
