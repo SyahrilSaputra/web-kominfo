@@ -55,17 +55,16 @@
                 <div class="card-body">
                     <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
                         <div class="carousel-inner">
-                            @if (count($image) > 1) 
-                                @foreach ($image as $img)
-                                    <div class="carousel-item {{ $loop->iteration == 1 ? 'active' : '' }} covImg">
-                                        <img src="{{ asset('') }}storage/photos/informasi-img/{{$img->name}}" class="d-block w-100" alt="...">
-                                    </div>
-                                @endforeach
-                            @else
+                            @foreach ($image as $img)
+                                <div class="carousel-item {{ $loop->iteration == 1 ? 'active' : '' }} covImg">
+                                    <img src="{{ asset('') }}storage/photos/informasi-img/{{$img->name}}" class="d-block w-100" alt="...">
+                                </div>
+                            @endforeach
+                            {{-- @else
                                 <div class="carousel-item active covImg">
                                     <img src="{{ asset('') }}storage/photos/informasi-img/default/default_informasi.png" class="d-block w-100" alt="...">
                                 </div>
-                            @endif
+                            @endif --}}
                         </div>
                         <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
                           <span class="carousel-control-prev-icon" aria-hidden="true"></span>
