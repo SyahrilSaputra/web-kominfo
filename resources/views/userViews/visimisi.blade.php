@@ -19,12 +19,12 @@
                   <div class="row">
                     <div class="col-lg-2 d-lg-block d-none"></div>
                     <div class="col-lg-8 col-12">
-                      <center>
-                        <span class="mb-3" ><h2 class="text-dark fw-bold">{{ $visi->title }}</h2></span>
-                      </center>
-                        <div class="">
-                            <div class="card">
-                                <div class="card-body">
+                      <div class="">
+                        <div class="card">
+                          <div class="card-body">
+                                  <center>
+                                    <span class="mb-3" ><h2 class="text-dark fw-bold">{{ $visi->title }}</h2></span>
+                                  </center>
                                     <div>
                                         {!! $visi->content !!}
                                     </div>

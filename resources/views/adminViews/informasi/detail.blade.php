@@ -1,33 +1,68 @@
 @extends('adminTemplates.temp')
 @section('title', 'Kontak Aplikasi')
-@section('dashboardContent')
 @section('css')
 <style>
-    .div-img-inf{
-        height: 700px;
-        width: 100%;
-        overflow: hidden;
+    .covImg{
+      width: 100%;
+      height:200px;
+      overflow:auto;
     }
-</style>
+    @media (min-width: 576px) {
+      .covImg{ 
+        height:280px; 
+      }
+    }
+    @media (min-width: 768px) { 
+      .covImg{ 
+        height:380px; 
+      }
+    }
+    @media (min-width: 992px) { 
+      .covImg{ 
+        height:380px; 
+      }
+    }
+    @media (min-width: 1200px) { 
+      .covImg{ 
+        height:400px; 
+      }
+    }
+    @media (min-width: 1400px) { 
+      .covImg{ 
+        height:450px; 
+      }
+    }
+    @media (min-width: 1600px) { 
+      .covImg{ 
+        height:550px; 
+      }
+    }
+    @media (min-width: 1800px) { 
+      .covImg{ 
+        height:680px; 
+      }
+    }
+  </style>
 @endsection
+@section('dashboardContent')
     <div class="">
         <div class="">
             <a href="{{ route('informasi') }}" class="btn btn-primary mb-2">Kembali</a>
         </div>
         <div>
-            <div class="card mx-auto" style="width:700px">
+            <div class="card mx-auto" style="">
                 <h5 class="card-header">Informasi Kominfo Bone</h5>
                 <div class="card-body">
                     <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
                         <div class="carousel-inner">
                             @if (count($image) > 1) 
                                 @foreach ($image as $img)
-                                    <div class="carousel-item {{ $loop->iteration == 1 ? 'active' : '' }} div-img-inf">
+                                    <div class="carousel-item {{ $loop->iteration == 1 ? 'active' : '' }} covImg">
                                         <img src="{{ asset('') }}storage/photos/informasi-img/{{$img->name}}" class="d-block w-100" alt="...">
                                     </div>
                                 @endforeach
                             @else
-                                <div class="carousel-item active div-img-inf">
+                                <div class="carousel-item active covImg">
                                     <img src="{{ asset('') }}storage/photos/informasi-img/default/default_informasi.png" class="d-block w-100" alt="...">
                                 </div>
                             @endif

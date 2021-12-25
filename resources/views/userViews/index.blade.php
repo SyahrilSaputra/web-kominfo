@@ -85,7 +85,7 @@
           <h4 class="text-white">Informasi Terbaru</h4>
           <h1 class="text-white">{{ $newinfo->title }}</h1>
           <h5 class="text-white">{!! substr($newinfo->content,0,100) !!}</h5>
-          <a href="" class="text-white icon-move-right">
+          <a href="{{ route('informasi.detail.user', ['informasi' => $newinfo->slug]) }}" class="text-white icon-move-right">
             Selengkapnya
             <i class="fas fa-arrow-right text-sm ms-1"></i>
           </a>

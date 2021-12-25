@@ -9,7 +9,7 @@
 <link rel="apple-touch-icon" sizes="76x76" href="./assets/img/apple-icon.png">
 <link rel="icon" type="image/png" href="./assets/img/favicon.png">
 
-<title>Kementrian Komunikasi dan Infromatika Bone</title>
+<title>Kementrian Komunikasi Informatika dan Persandian Kabupaten Bone</title>
 
 
 
@@ -33,7 +33,7 @@
 <link id="pagestyle" href="{{ asset('') }}assets/user/css/material-kit.css?v=3.0.0" rel="stylesheet" />
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
 
-
+@yield('css')
 </head>
 
 <body class="index-page bg-gray-200">

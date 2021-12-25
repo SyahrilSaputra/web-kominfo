@@ -16,19 +16,15 @@
             </div>
             <section class="mt-5 pt-5">
                 <div class="">
-                  <center>
-                    <span class="badge bg-info mb-3" ><h4 class="text-light fw-bold">Tentang Kami</h4></span>
-                  </center>
                   <div class="row">
                     <div class="col-lg-2 d-lg-block d-none"></div>
                     <div class="col-lg-8 col-12">
                         <div class="">
-                            <img src="{{ asset('')}}assets/index1.jpg" style="width:100%; border-radius: 10px;">
-                        </div>
-                        <div class="">
-                            <div class="card">
-                                <div class="card-body">
-                                    <h5 class="card-title text-center">{{ $tentang->title }}</h5>
+                          <div class="card">
+                            <div class="card-body">
+                                  <center>
+                                    <span class="mb-3" ><h2 class="text-dark fw-bold">{{ $tentang->title }}</h2></span>
+                                  </center>
                                     <div>
                                         {!! $tentang->content !!}
                                     </div>
