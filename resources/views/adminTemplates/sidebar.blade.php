@@ -84,7 +84,7 @@
     </nav>
     <div class="promo-box">
       <h3>Kominfo Bone</h3>
-      <p>Website Sistem Informasi Kementrian Komunikasi Informatika dan Persandian Kabupaten Bone</p>
+      <p>Website Sistem Informasi Dinas Komunikasi Informatika dan Persandian Kabupaten Bone</p>
       <a
         href="{{ route('logout') }}"
         rel="nofollow"
