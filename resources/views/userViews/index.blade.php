@@ -6,7 +6,7 @@
       <div class="row">
         <div class="col-lg-7 text-center mx-auto">
           <h1 class="text-white border-dark pt-3 mt-n5" style="text-shadow: 3px 2px 1px black;">Selamat Datang Di Website Kominfo Bone</h1>
-          <p class="lead text-white mt-3" style="text-shadow: 3px 2px 1px black;">Website Company Profile Kementrian Komunikasi Informatika dan Persandian Kabupaten Bone</p>
+          <p class="lead text-white mt-3" style="text-shadow: 3px 2px 1px black;">Website Company Profile Dinas Komunikasi Informatika dan Persandian Kabupaten Bone</p>
         </div>
       </div>
     </div>
@@ -24,7 +24,7 @@
             <div class="p-3 text-center">
               <h1 class="text-gradient text-info"><span id="state1" countTo="{{ $jumInfo }}">0</span></h1>
               <h5 class="mt-3">Informasi</h5>
-              <p class="text-sm font-weight-normal">Infromasi Terkait Kementrian Komunikasi dan Informatika Kabupaten Bone</p>
+              <p class="text-sm font-weight-normal">Infromasi Terkait Dinas Komunikasi dan Informatika Kabupaten Bone</p>
             </div>
             <hr class="vertical dark">
           </div>
@@ -32,7 +32,7 @@
             <div class="p-3 text-center">
               <h1 class="text-gradient text-info"> <span id="state2" countTo="{{ $jumKontak }}">0</span></h1>
               <h5 class="mt-3">Kontak</h5>
-              <p class="text-sm font-weight-normal">Kontak Terkait Kementrian Komunikasi dan Informatika Kabupaten Bone</p>
+              <p class="text-sm font-weight-normal">Kontak Terkait Dinas Komunikasi dan Informatika Kabupaten Bone</p>
             </div>
             <hr class="vertical dark">
           </div>
@@ -40,7 +40,7 @@
             <div class="p-3 text-center">
               <h1 class="text-gradient text-info" id="state3" countTo="{{ $jumGaleri }}">0</h1>
               <h5 class="mt-3">Galeri</h5>
-              <p class="text-sm font-weight-normal">Galeri Kementrian Komunikasi dan Informatika Kabupaten Bone</p>
+              <p class="text-sm font-weight-normal">Galeri Dinas Komunikasi dan Informatika Kabupaten Bone</p>
             </div>
           </div>
         </div>
@@ -53,7 +53,7 @@
 <section class="my-5 py-5">
   <div class="container">
     <center>
-      <span class="badge bg-info mb-3" ><h4 class="text-light fw-bold">Tentang Kami</h4></span>
+      <span class="mb-3" ><h2 class="text-info fw-bold">Tentang Kami</h2></span>
     </center>
     <div class="row">
       <div class="col-lg-5">
@@ -99,7 +99,7 @@
 <section class="my-5 py-5">
   <div class="container">
     <center>
-      <span class="badge bg-info mb-3"><h4 class="text-light fw-bold">Pimpinan</h4></span>
+      <span class="mb-3" ><h2 class="text-info fw-bold">Pimpinan</h2></span>
       <div class="card" style="width: 16rem;">
         <img src="{{ asset('') }}storage/photos/pimpinan-img/{{ $pimpinan->image }}" alt="" class="img-thumbnail img-fluid">
       </div>
