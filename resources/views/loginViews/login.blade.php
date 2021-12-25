@@ -5,7 +5,7 @@
   <!-- Required meta tags -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <title>Dinas Komunikasi Informatika dan Persandian Kabupaten Bone</title>
+  <title>Dinas Komunikasi Informatika dan Persandian Kabupaten Bone </title>
   <!-- plugins:css -->
   <link rel="stylesheet" href="{{ asset('')}}assets/admin/vendors/feather/feather.css">
   <link rel="stylesheet" href="{{ asset('')}}assets/admin/vendors/mdi/css/materialdesignicons.min.css">
@@ -19,7 +19,7 @@
   <!-- inject:css -->
   <link rel="stylesheet" href="{{ asset('')}}assets/admin/css/vertical-layout-light/style.css">
   <!-- endinject -->
-  <link rel="shortcut icon" href="{{ asset('assets/admin/images/kominfo.png') }}" />
+  <link rel="shortcut icon" href="{{ asset('')}}assets/admin/images/logo.png" />
 </head>
 <body>
   <div class="container-scroller">
