@@ -56,15 +56,16 @@
                     <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
                         <div class="carousel-inner">
                             @foreach ($image as $img)
-                                <div class="carousel-item {{ $loop->iteration == 1 ? 'active' : '' }} covImg">
-                                    <img src="{{ asset('') }}storage/photos/informasi-img/{{$img->name}}" class="d-block w-100" alt="...">
-                                </div>
+                                @if ($img->name == 'default_informasi.png')
+                                    <div class="carousel-item {{ $loop->iteration == 1 ? 'active' : '' }} covImg">
+                                        <img src="{{ asset('') }}storage/photos/informasi-img/default/{{$img->name}}" class="d-block w-100" alt="...">
+                                    </div>
+                                @else
+                                    <div class="carousel-item {{ $loop->iteration == 1 ? 'active' : '' }} covImg">
+                                        <img src="{{ asset('') }}storage/photos/informasi-img/{{$img->name}}" class="d-block w-100" alt="...">
+                                    </div>
+                                @endif 
                             @endforeach
-                            {{-- @else
-                                <div class="carousel-item active covImg">
-                                    <img src="{{ asset('') }}storage/photos/informasi-img/default/default_informasi.png" class="d-block w-100" alt="...">
-                                </div>
-                            @endif --}}
                         </div>
                         <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
                           <span class="carousel-control-prev-icon" aria-hidden="true"></span>
