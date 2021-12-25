@@ -1,45 +1,45 @@
 @section('css')
 <style>
   .covImg{
-    width: 100%;
-    height: 200px;
-    overflow:auto;
-  }
-  @media (min-width: 576px) {
-    .covImg{ 
-      height:280px; 
+      width: 100%;
+      height:320px;
+      overflow:auto;
     }
-  }
-  @media (min-width: 768px) { 
-    .covImg{ 
-      height:380px; 
+    @media (min-width: 576px) {
+      .covImg{ 
+        height:520px; 
+      }
     }
-  }
-  @media (min-width: 992px) { 
-    .covImg{ 
-      height:380px; 
+    @media (min-width: 768px) { 
+      .covImg{ 
+        height:700px; 
+      }
     }
-  }
-  @media (min-width: 1200px) { 
-    .covImg{ 
-      height:400px; 
+    @media (min-width: 992px) { 
+      .covImg{ 
+        height:450px; 
+      }
     }
-  }
-  @media (min-width: 1400px) { 
-    .covImg{ 
-      height:450px; 
+    @media (min-width: 1200px) { 
+      .covImg{ 
+        height:560px; 
+      }
     }
-  }
-  @media (min-width: 1600px) { 
-    .covImg{ 
-      height:550px; 
+    @media (min-width: 1400px) { 
+      .covImg{ 
+        height:650px; 
+      }
     }
-  }
-  @media (min-width: 1800px) { 
-    .covImg{ 
-      height:680px; 
+    @media (min-width: 1600px) { 
+      .covImg{ 
+        height:750px; 
+      }
     }
-  }
+    @media (min-width: 1800px) { 
+      .covImg{ 
+        height:910px; 
+      }
+    }
 </style>
 @endsection
 @include('userViews.userTemp.header')
@@ -58,10 +58,10 @@
             <div class="mt-n8 mt-md-n9 text-center">
               <img class="avatar avatar-xxl shadow-xl position-relative z-index-2" src="{{ asset('') }}assets/kominfo.png" alt="bruce" loading="lazy">
             </div>
-            <section class="py-3">
+            <section class="py-3 mt-5">
               <div class="row">
-                <div class="col-lg-2 d-none d-lg-block"></div>
-                <div class="col-lg-8 col-12">
+                <div class="col-lg-3 d-none d-lg-block"></div>
+                <div class="col-lg-6 col-12">
                   <div class="card" style="width: 100%;">
                     <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
                       <div class="carousel-inner">
@@ -96,7 +96,7 @@
                     </div>
                   </div>
                 </div>
-                <div class="col-lg-2 d-none d-lg-block"></div>
+                <div class="col-lg-3 d-none d-lg-block"></div>
               </div>
             </section>
           </div>
