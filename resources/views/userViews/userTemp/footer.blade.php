@@ -5,7 +5,7 @@
         <div class="text-center">
           <p class="text-dark my-4 text-sm font-weight-normal">
             @<script>document.write(new Date().getFullYear())</script> <br>
-            Kementrian Komunikasi Informatika dan Persandian Kabupaten Bone | Informatika 18 Universitas Hasanuddin <br>
+            Dinas Komunikasi Informatika dan Persandian Kabupaten Bone | Informatika 18 Universitas Hasanuddin <br>
             Ceated By: <a href="/">Synchronous 18 </a>
           </p>
         </div>
