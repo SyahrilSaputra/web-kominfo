@@ -24,7 +24,7 @@
             <div class="p-3 text-center">
               <h1 class="text-gradient text-info"><span id="state1" countTo="{{ $jumInfo }}">0</span></h1>
               <h5 class="mt-3">Informasi</h5>
-              <p class="text-sm font-weight-normal">Infromasi Terkait Dinas Komunikasi dan Informatika Kabupaten Bone</p>
+              <p class="text-sm font-weight-normal">Informasi Terkait Dinas Komunikasi Informatika dan Persandian Kabupaten Bone</p>
             </div>
             <hr class="vertical dark">
           </div>
@@ -32,7 +32,7 @@
             <div class="p-3 text-center">
               <h1 class="text-gradient text-info"> <span id="state2" countTo="{{ $jumKontak }}">0</span></h1>
               <h5 class="mt-3">Kontak</h5>
-              <p class="text-sm font-weight-normal">Kontak Terkait Dinas Komunikasi dan Informatika Kabupaten Bone</p>
+              <p class="text-sm font-weight-normal">Kontak Terkait Dinas Komunikasi Informatika dan Persandian Kabupaten Bone</p>
             </div>
             <hr class="vertical dark">
           </div>
@@ -40,7 +40,7 @@
             <div class="p-3 text-center">
               <h1 class="text-gradient text-info" id="state3" countTo="{{ $jumGaleri }}">0</h1>
               <h5 class="mt-3">Galeri</h5>
-              <p class="text-sm font-weight-normal">Galeri Dinas Komunikasi dan Informatika Kabupaten Bone</p>
+              <p class="text-sm font-weight-normal">Galeri Dinas Komunikasi Informatika dan Persandian Kabupaten Bone</p>
             </div>
           </div>
         </div>
